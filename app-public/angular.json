@@ -26,7 +26,7 @@
               "src/styles.css"
             ],
             "scripts": [
-              "assets/js/angular-components.js"
+              "src/assets/semantic/dist/semantic.min.js"
             ]
           },
           "configurations": {
