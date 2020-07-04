@@ -1,8 +1,8 @@
-var mongoose = require("mongoose");
-require("./article");
-require("./user");
+import mongoose from "mongoose";
+import * as models from "./article.js";
+import * as user_models from "./user.js";
 
-dbURI = 'mongodb://localHost/independentAnonymous';
+let dbURI = 'mongodb://localHost/independentAnonymous';
 mongoose.connect(dbURI,{useNewUrlParser:true});
 
 mongoose.connection.on('connected',() => {

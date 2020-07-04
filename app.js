@@ -1,17 +1,18 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+import createError from 'http-errors';
+import express from 'express';
+import path from 'path';
+import cookieParser from 'cookie-parser';
 
-require("./api/models/db");
+import logger from 'morgan';
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-var apiRouter = require('./api/routes/articles');
+import * as db from "./api/models/db.js";
 
-var app = express();
+import indexRouter from  './routes/index.js';
+import usersRouter from './routes/users.js';
+import apiRouter from './api/routes/articles.js';
 
+let app = express();
+let __dirname = process.cwd();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
@@ -42,4 +43,4 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-module.exports = app;
+export default app ;

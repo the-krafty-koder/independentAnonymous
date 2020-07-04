@@ -1,7 +1,16 @@
-var express = require("express");
-var router = express.Router();
+import express from "express";
+let router = express.Router();
 
-const controllers = require('../controllers/articles');
+import {
+  showArticleContoller,
+  albumArticleContoller,
+  movieArticleContoller,
+  songArticleContoller,
+  createMovieArticle,
+  createShowArticle,
+  createSongArticle,
+  createAlbumArticle,
+} from '../controllers/articles.js';
 
 /*
 router
@@ -16,52 +25,52 @@ controllers.songArticleContoller.getAllArticles
 
 router
       .route('/articles/song-articles')
-      .post(controllers.createSongArticle)
-      .get(controllers.songArticleContoller.getAllArticles);
+      .post((req,res) => createSongArticle(req,res))
+      .get((req,res) => songArticleContoller.getAllArticles(req,res));
 
 
 
 router
       .route('/articles/song-articles/:articleID')
-      //.get(controllers.songArticleController.getArticleByID)
-      .put(controllers.songArticleContoller.updateArticle)
-      .delete(controllers.songArticleContoller.deleteArticle);
+      .get((req,res) => songArticleContoller.getArticleByID(req,res))
+      .put((req,res) => songArticleContoller.updateArticle(req,res))
+      .delete((req,res) => songArticleContoller.deleteArticle(req,res));
 
 // Show articles
 router
       .route('/articles/show-articles')
-      .post(controllers.createShowArticle)
-      .get(controllers.showArticleContoller.getAllArticles);
+      .post((req,res) => createShowArticle(req,res))
+      .get((req,res) => showArticleContoller.getAllArticles(req,res));
 
 router
       .route('/articles/show-articles/:articleID')
-      .put(controllers.showArticleContoller.updateArticle)
-      .delete(controllers.showArticleContoller.deleteArticle)
-      //.get(controllers.showArticleControllers.getArticleByID);
+      .put((req,res) => showArticleContoller.updateArticle(req,res))
+      .delete((req,res) => controllers.showArticleContoller.deleteArticle(req,res))
+      .get((req,res) => showArticleContollers.getArticleByID(req,res));
 
 // Album articles
 router
       .route('/articles/album-articles')
-      .post(controllers.createAlbumArticle)
-      //.get(controllers.albumArticleController.getAllArticles);
+      .post((req,res) => createAlbumArticle(req,res))
+      .get((req,res) => albumArticleContoller.getAllArticles(req,res));
 
 
 router
       .route('/articles/album-articles/:articleID')
-      .put(controllers.albumArticleContoller.updateArticle)
-      .delete(controllers.albumArticleContoller.deleteArticle)
-      //.get(controllers.albumArticleControllers.getArticleByID);
+      .put((req,res) => albumArticleContoller.updateArticle(req,res))
+      .delete((req,res) => albumArticleContoller.deleteArticle(req,res))
+      .get((req,res) => albumArticleContoller.getArticleByID(req,res));
 
 router
       .route('/articles/movie-articles')
-      .post(controllers.createMovieArticle)
-      .get(controllers.movieArticleContoller.getAllArticles);
+      .post((req,res) => createMovieArticle(req,res))
+      .get((req,res) => movieArticleContoller.getAllArticles(req,res));
 
 router
       .route('/articles/movie-articles/:articleID')
-      //.get(controllers.movieArticleController.getArticleByID)
-      .put(controllers.movieArticleContoller.updateArticle)
-      .delete(controllers.movieArticleContoller.deleteArticle);
+      .get((req,res) => movieArticleController.getArticleByID(req,res))
+      .put((req,res) => movieArticleContoller.updateArticle(req,res))
+      .delete((req,res) => movieArticleContoller.deleteArticle(req,res));
 
 
-module.exports = router;
+export default router ;

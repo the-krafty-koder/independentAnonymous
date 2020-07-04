@@ -1,9 +1,9 @@
-const articleController = require('./base');
+import baseController from './base.js';
 
-const songArticleContoller = new articleController.baseController({kind:"SongArticle"});
-var albumArticleContoller = new articleController.BaseController({kind:"AlbumArticle"});
-const movieArticleContoller = new articleController.BaseController({kind:"MovieArticle"});
-const showArticleContoller = new articleController.BaseController({kind:"ShowArticle"});
+let songArticleContoller = new baseController({kind:"SongArticle"});
+const albumArticleContoller = new baseController({kind:"AlbumArticle"});
+const movieArticleContoller = new baseController({kind:"MovieArticle"});
+const showArticleContoller = new baseController({kind:"ShowArticle"});
 
 
 const createSongArticle = (req,res) => {
@@ -40,8 +40,7 @@ const createAlbumArticle = (req,res) => {
   albumArticleContoller.createArticle(req,res,values);
 };
 
-
-module.exports = {
+export {
   showArticleContoller,
   albumArticleContoller,
   movieArticleContoller,

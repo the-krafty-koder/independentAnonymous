@@ -1,7 +1,6 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
-
-var options = {discriminatorKey:"kind"};
+let options = {discriminatorKey:"kind"};
 
 const articleCommentSchema = new mongoose.Schema({
   name:{type:String},
@@ -76,4 +75,4 @@ movieArticleSchema.pre('save',(next) => {
 const movieArticle = Article.discriminator("MovieArticle",movieArticleSchema);
 
 
-module.exports = { songArticle,movieArticle,albumArticle,showArticle };
+export { songArticle,movieArticle,albumArticle,showArticle };

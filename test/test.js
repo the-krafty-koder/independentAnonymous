@@ -1,6 +1,7 @@
-const assert = require("assert");
-const mongoose  = require('mongoose');
-const Article = mongoose.Model("Article");
+import assert from 'assert';
+import mongoose  = from 'mongoose';
+
+let Article = mongoose.Model("Article");
 
 let new_article;
 beforeEach(() => {
@@ -33,7 +34,3 @@ describe("Creating articles",() => {
      });
   });
 });
-
-"scripts":{
-  "test":"nodemon --exec 'mocha -R min'"
-}

@@ -1,14 +1,14 @@
-const mongoose = require('mongoose');
-const Article = mongoose.model('Article');
+import mongoose from "mongoose";
 
-public class baseController {
+let Article = mongoose.model('Article');
+
+class baseController {
   constructor(discriminator) {
     this.discriminator = discriminator;
-
   };
 
   createArticle(req,res,values) {
-    var articleValues = [
+    let articleValues = [
       {
         title: req.body.title,
         content:req.body.content,
@@ -92,4 +92,4 @@ public class baseController {
   };
 };
 
-module.exports = baseController ;
+export default baseController  ;
