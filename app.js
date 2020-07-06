@@ -41,7 +41,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/api', apiRouter);
 
-app.use(cors());
+//app.use(cors());
 
 
 // catch 404 and forward to error handler
@@ -61,8 +61,8 @@ app.use(function(err, req, res, next) {
 });
 
 const server = http.Server(app);
-/*
-const io = socket(server,{
+
+const io = socket(server,/*{
     handlePreflightRequest: (req, res) => {
         const headers = {
             "Access-Control-Allow-Headers": "Content-Type, Authorization",
@@ -72,7 +72,7 @@ const io = socket(server,{
         res.writeHead(200, headers);
         res.end();
     }
-});*/
+}*/);
 // socket-io
 io.on("connection",(socket)=>{
 	console.log("conected");
