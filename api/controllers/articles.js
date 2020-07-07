@@ -7,15 +7,15 @@ const showArticleContoller = new baseController({kind:"ShowArticle"});
 
 
 const createSongArticle = (req,res) => {
-  values = {
+  let values = {
     artist:req.body.artist,
     link:req.body.link
-  }
+  };
   songArticleContoller.createArticle(req,res,values);
 };
 
 const createShowArticle = (req,res,next) => {
-  values = {
+  let values = {
     production:req.body.production,
     season:req.body.season,
     episode:req.body.episode,
@@ -25,7 +25,7 @@ const createShowArticle = (req,res,next) => {
 }
 
 const createMovieArticle = (req,res) => {
-  values = {
+  let values = {
     production:req.body.production,
     year:req.body.year
   }
@@ -33,7 +33,7 @@ const createMovieArticle = (req,res) => {
 };
 
 const createAlbumArticle = (req,res) => {
-  values = {
+  let values = {
     artist:req.body.artist,
     songsList:req.body.songsList.split(",")
   }

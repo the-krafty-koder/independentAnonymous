@@ -13,6 +13,7 @@ import socket from "socket.io";
 import indexRouter from  './routes/index.js';
 import usersRouter from './routes/users.js';
 import apiRouter from './api/routes/articles.js';
+import editorRouter from './editor/routes.js';
 
 let app = express();
 let __dirname = process.cwd();
@@ -25,9 +26,10 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'node_modules')));
-app.use(express.static(path.join(__dirname, 'editor')));
+//app.use(express.static(path.join(__dirname, 'node_modules')));
 app.use(express.static(path.join(__dirname, 'public')));
+
+
 
 app.use('/editor',function(req, res, next) {
   res.header('Access-Control-Allow-Origin', 'http://localhost:8080');
@@ -40,6 +42,8 @@ app.use('/editor',function(req, res, next) {
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/api', apiRouter);
+app.use('/', editorRouter);
+
 
 //app.use(cors());
 
@@ -86,6 +90,6 @@ io.on("disconnect",()=>{
 	console.log("people left");
 })
 
-server.listen(8080, "0.0.0.0",()=>console.log("Server starts listening"));
+server.listen(8080,()=>console.log("Server starts listening"));
 
 

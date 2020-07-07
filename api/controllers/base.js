@@ -22,6 +22,7 @@ class baseController {
     ];
     Article.create(articleValues,(error,article) => {
       if(error){
+        console.log(error);
         return res.status(404)
                   .json(error);
       }else{

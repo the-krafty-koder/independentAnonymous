@@ -14,7 +14,7 @@ const articleSchema = new mongoose.Schema({
   date_posted:{type:Date,default:Date.now},
   tag:{type:String,required:true},
   author:{type:String,required:true},
-  image:{type:String,required:true},
+  image:{type:String,required:false},
   ratings:{type:Number,'default':0,min:0,max:5},
   comments:[articleCommentSchema]
 },options);
@@ -25,7 +25,7 @@ const songArticleSchema = new mongoose.Schema({
   artist:{type:String,required:true},
   link:{type:String}
 });
-songArticleSchema.pre('save',(next) => {
+songArticleSchema.pre('save',function(next){
   this.tag = "song";
 
   next();
@@ -38,7 +38,7 @@ const albumArticleSchema = new mongoose.Schema({
   artist:{type:String,required:true},
   songsList:[String],
 })
-albumArticleSchema.pre('save',(next) => {
+albumArticleSchema.pre('save',function(next){
   this.tag = "album";
 
   next();
@@ -47,13 +47,13 @@ albumArticleSchema.pre('save',(next) => {
 const albumArticle = Article.discriminator("AlbumArticle",albumArticleSchema);
 
 
-const showArticleSchema = new mongoose.Schema({
+let showArticleSchema = new mongoose.Schema({
   production:[String],
   season:{type:Number,required:true},
   episode:{type:Number},
   year:{type:Date}
-})
-showArticleSchema.pre('save',(next) => {
+});
+showArticleSchema.pre('save',function(next){
   this.tag = "show";
 
   next();
@@ -66,7 +66,7 @@ const movieArticleSchema = new mongoose.Schema({
   production:[String],
   year:{type:String}
 });
-movieArticleSchema.pre('save',(next) => {
+movieArticleSchema.pre('save',function(next){
   this.tag = "movie";
 
   next();

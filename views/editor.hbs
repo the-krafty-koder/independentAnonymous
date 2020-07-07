@@ -1,11 +1,55 @@
 <html>
-<title>Realtime Editor/Collaboration</title><body>
-    <h3>Realtime Editor/Collaboration</h3>
-    <div>
-        <textarea rows="30" cols="50" id="editor" style="background-color:dimgrey;color:white" placeholder="Type Your Text..."></textarea>
-    </div>
+<head>
+	<title>Article</title>
+	<link rel="stylesheet" type="text/css" href="/editor/editor.css">
+	<link rel="stylesheet" type="text/css" href="/semantic/semantic.min.css">
+	
+</head>
+
+<body>
+	<div class="wrapper">
+	<div class="ui header">
+		<nav>
+    	<div class="ui menu ">
+    		<a class="item">
+    			<i class="arrow circle left icon"></i>
+    		</a>
+    		<div class="right labeled icon menu">
+    			<a class="item">
+    				<i class="write icon"></i>
+    				
+    			</a>
+    		</div>
+    	</div>
+        </nav>
+	</div>
+	<div class="ui section" id="article-section">
+	<div class="ui grid">
+		<div class="row">
+			<div class="two wide column"></div>
+			<div class="twelve wide column">
+				<form class="ui form" id="editor" method="post" onload="addAction()">
+					<textarea oninput="autoGrow(this)" id="article-area" name="article" value="Default name for team." style="resize: none;overflow: hidden;min-height:500px;max-height: 900px;border: none">
+    		        </textarea>
+    		        <input class="ui button float-right" type="submit" value="Submit">
+    		    </form>
+			</div>
+		</div>
+	</div>
+	</div>
+	</div>
     <script src="./socket.io-client/dist/socket.io.js"></script>
     <script src="./socket_client.js"></script>
+    <script src="/js/jquery.min.js"></script>
+    <script src="/semantic/semantic.min.js"></script>
+    <script src="/js/onload.js"></script>
+    <script type="text/javascript">
+    	function autoGrow(element) {
+    		element.style.height = "10px";
+    		element.style.height = (element.scrollHeight)+"px";
+    	}
+    </script>
 </body>
 
 </html>
+
