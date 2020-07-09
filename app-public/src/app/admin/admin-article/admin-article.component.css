@@ -1,0 +1,19 @@
+.card .image{
+	height: 50% !important;
+}
+
+.image-container{
+	height: 15vh;
+}
+
+.articles-list-header{
+	margin-top: 2vh;
+}
+
+.more-button{
+	margin-top: 75%;
+}
+
+body{
+	overflow-y: hidden;
+}

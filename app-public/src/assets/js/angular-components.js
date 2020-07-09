@@ -4,5 +4,11 @@ $(document).ready(function(){
 	                .sidebar('setting','dimPage',false)
 	                .sidebar('setting','defaultTransition','uncover')
                     .sidebar('attach events', '.menu .item.toggler');
+    
+;
 ;
  });
+
+function showModal(){
+	$('.ui.modal').modal('show');
+};

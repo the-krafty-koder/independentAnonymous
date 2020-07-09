@@ -2,8 +2,489 @@
   <app-admin-sidebar></app-admin-sidebar>
   <div class="pusher">
     <div class="ui basic segment">
-      <h3 class="ui header">Application Content</h3>
-      <p>admin-article works!</p>
+    	<div class="four wide column float right">
+    		<div class="ui blue button" onclick="showModal()">
+    			Create
+    		</div>
+    		<div class="ui tiny modal">
+    			<div class="header">Choose Type</div>
+    			<div class="content">
+    				<form class="ui form">
+    					<div class="fields">
+    						<div class="seven wide field ui center aligned segment" style="margin-left: 1em;">
+    							<a>
+    								<i class="large music icon"></i>
+    							</a>
+    							<label>Song</label>
+    						</div>    	
+    						<div class="one wide field "></div>						
+    						<div class="seven wide field ui center aligned segment">
+    							<a>
+    								<i class="large film icon"></i>
+    							</a>
+    							<label>Movie</label>
+    						</div>
+    					</div>
+    					<div class="fields">
+    						<div class="seven wide field ui center aligned segment" style="margin-left: 1em;">
+    							<a>
+    								<i class="large video icon"></i>
+    							</a>
+    							<label>Show</label>
+    						</div>   
+    						<div class="one wide field "></div>	 							
+    						<div class="seven wide field ui center aligned segment">
+    							<a>
+    								<i class="large folder icon"></i>
+    							</a>
+    							<label>Album</label>
+    						</div>
+    					</div>
+    				</form>
+    			</div>
+    			<div class="actions">
+    				<div class="ui proceed button">Proceed</div>
+    			</div>
+    		</div>
+    	</div>
+    	<div class="articles-list">
+    		<h4 class="articles-list-header">Song Articles</h4>
+    		<div class="ui six column grid">
+    			<div class="column" id="article-card">
+    				<div class="ui fluid card">
+    					<div class="image-container">
+    						<img src="/images/avatar/large/jenny.jpg" class="visible content">
+    					</div>	
+    					<div class="content">
+    						<a class="header"><h4>Daniel Louise</h4></a>
+    						<div class="meta">
+    							<span>2 days ago</span>
+    							<a>| Artist</a>
+    							<div>
+    								<span class="left floated like"><i class="like icon"></i>20</span>
+    							    <span class="right floated view"><i class="eye icon"></i>70</span>
+    							</div>
+    							
+    						</div>
+    					</div>
+    				</div>
+    			</div>
+    			<div class="column" id="article-card">
+    				<div class="ui fluid card">
+    					<div class="image-container">
+    						<img src="/images/avatar/large/jenny.jpg" class="visible content">
+    					</div>	
+    					<div class="content">
+    						<a class="header"><h4>Daniel Louise</h4></a>
+    						<div class="meta">
+    							<span>2 days ago</span>
+    							<a>| Artist</a>
+    							<div>
+    								<span class="left floated like"><i class="like icon"></i>20</span>
+    							    <span class="right floated view"><i class="eye icon"></i>70</span>
+    							</div>
+    							
+    						</div>
+    					</div>
+    				</div>
+    			</div>
+    			<div class="column" id="article-card">
+    				<div class="ui fluid card">
+    					<div class="image-container">
+    						<img src="/images/avatar/large/jenny.jpg" class="visible content">
+    					</div>	
+    					<div class="content">
+    						<a class="header"><h4>Daniel Louise</h4></a>
+    						<div class="meta">
+    							<span>2 days ago</span>
+    							<a>| Artist</a>
+    							<div>
+    								<span class="left floated like"><i class="like icon"></i>20</span>
+    							    <span class="right floated view"><i class="eye icon"></i>70</span>
+    							</div>
+    							
+    						</div>
+    					</div>
+    				</div>
+    			</div>
+    			<div class="column" id="article-card">
+    				<div class="ui fluid card">
+    					<div class="image-container">
+    						<img src="/images/avatar/large/jenny.jpg" class="visible content">
+    					</div>	
+    					<div class="content">
+    						<a class="header"><h4>Daniel Louise</h4></a>
+    						<div class="meta">
+    							<span>2 days ago</span>
+    							<a>| Artist</a>
+    							<div>
+    								<span class="left floated like"><i class="like icon"></i>20</span>
+    							    <span class="right floated view"><i class="eye icon"></i>70</span>
+    							</div>
+    							
+    						</div>
+    					</div>
+    				</div>
+    			</div>
+    			<div class="column" id="article-card">
+    				<div class="ui fluid card">
+    					<div class="image-container">
+    						<img src="/images/avatar/large/jenny.jpg" class="visible content">
+    					</div>	
+    					<div class="content">
+    						<a class="header"><h4>Daniel Louise</h4></a>
+    						<div class="meta">
+    							<span>2 days ago</span>
+    							<a>| Artist</a>
+    							<div>
+    								<span class="left floated like"><i class="like icon"></i>20</span>
+    							    <span class="right floated view"><i class="eye icon"></i>70</span>
+    							</div>
+    							
+    						</div>
+    					</div>
+    				</div>
+    			</div>
+    			<div class="column fluid center aligned" >
+    				<div class="ui left labeled button more-button" tabindex="0">
+    					<a class="ui basic right pointing label">
+    						More
+    					</a>
+    					<div class="ui button">
+    						2,048	
+    					</div>
+    					
+    				</div>
+    			</div>
+    		</div>
+    		<h4 class="articles-list-header">Album Articles</h4>
+    		<div class="ui six column grid">
+    			<div class="column" id="article-card">
+    				<div class="ui fluid card">
+    					<div class="image-container">
+    						<img src="/images/avatar/large/jenny.jpg" class="visible content">
+    					</div>	
+    					<div class="content">
+    						<a class="header"><h4>Daniel Louise</h4></a>
+    						<div class="meta">
+    							<span>2 days ago</span>
+    							<a>| Artist</a>
+    							<div>
+    								<span class="left floated like"><i class="like icon"></i>20</span>
+    							    <span class="right floated view"><i class="eye icon"></i>70</span>
+    							</div>
+    							
+    						</div>
+    					</div>
+    				</div>
+    			</div>
+    			<div class="column" id="article-card">
+    				<div class="ui fluid card">
+    					<div class="image-container">
+    						<img src="/images/avatar/large/jenny.jpg" class="visible content">
+    					</div>	
+    					<div class="content">
+    						<a class="header"><h4>Daniel Louise</h4></a>
+    						<div class="meta">
+    							<span>2 days ago</span>
+    							<a>| Artist</a>
+    							<div>
+    								<span class="left floated like"><i class="like icon"></i>20</span>
+    							    <span class="right floated view"><i class="eye icon"></i>70</span>
+    							</div>
+    							
+    						</div>
+    					</div>
+    				</div>
+    			</div>
+    			<div class="column" id="article-card">
+    				<div class="ui fluid card">
+    					<div class="image-container">
+    						<img src="/images/avatar/large/jenny.jpg" class="visible content">
+    					</div>	
+    					<div class="content">
+    						<a class="header"><h4>Daniel Louise</h4></a>
+    						<div class="meta">
+    							<span>2 days ago</span>
+    							<a>| Artist</a>
+    							<div>
+    								<span class="left floated like"><i class="like icon"></i>20</span>
+    							    <span class="right floated view"><i class="eye icon"></i>70</span>
+    							</div>
+    							
+    						</div>
+    					</div>
+    				</div>
+    			</div>
+    			<div class="column" id="article-card">
+    				<div class="ui fluid card">
+    					<div class="image-container">
+    						<img src="/images/avatar/large/jenny.jpg" class="visible content">
+    					</div>	
+    					<div class="content">
+    						<a class="header"><h4>Daniel Louise</h4></a>
+    						<div class="meta">
+    							<span>2 days ago</span>
+    							<a>| Artist</a>
+    							<div>
+    								<span class="left floated like"><i class="like icon"></i>20</span>
+    							    <span class="right floated view"><i class="eye icon"></i>70</span>
+    							</div>
+    							
+    						</div>
+    					</div>
+    				</div>
+    			</div>
+    			<div class="column" id="article-card">
+    				<div class="ui fluid card">
+    					<div class="image-container">
+    						<img src="/images/avatar/large/jenny.jpg" class="visible content">
+    					</div>	
+    					<div class="content">
+    						<a class="header"><h4>Daniel Louise</h4></a>
+    						<div class="meta">
+    							<span>2 days ago</span>
+    							<a>| Artist</a>
+    							<div>
+    								<span class="left floated like"><i class="like icon"></i>20</span>
+    							    <span class="right floated view"><i class="eye icon"></i>70</span>
+    							</div>
+    							
+    						</div>
+    					</div>
+    				</div>
+    			</div>
+    			<div class="column fluid center aligned" >
+    				<div class="ui left labeled button more-button" tabindex="0">
+    					<a class="ui basic right pointing label">
+    						More
+    					</a>
+    					<div class="ui button">
+    						2,048	
+    					</div>
+    					
+    				</div>
+    			</div>
+    		</div>
+    		<h4 class="articles-list-header">Show Articles</h4>
+    		<div class="ui six column grid">
+    			<div class="column" id="article-card">
+    				<div class="ui fluid card">
+    					<div class="image-container">
+    						<img src="/images/avatar/large/jenny.jpg" class="visible content">
+    					</div>	
+    					<div class="content">
+    						<a class="header"><h4>Daniel Louise</h4></a>
+    						<div class="meta">
+    							<span>2 days ago</span>
+    							<a>| Artist</a>
+    							<div>
+    								<span class="left floated like"><i class="like icon"></i>20</span>
+    							    <span class="right floated view"><i class="eye icon"></i>70</span>
+    							</div>
+    							
+    						</div>
+    					</div>
+    				</div>
+    			</div>
+    			<div class="column" id="article-card">
+    				<div class="ui fluid card">
+    					<div class="image-container">
+    						<img src="/images/avatar/large/jenny.jpg" class="visible content">
+    					</div>	
+    					<div class="content">
+    						<a class="header"><h4>Daniel Louise</h4></a>
+    						<div class="meta">
+    							<span>2 days ago</span>
+    							<a>| Artist</a>
+    							<div>
+    								<span class="left floated like"><i class="like icon"></i>20</span>
+    							    <span class="right floated view"><i class="eye icon"></i>70</span>
+    							</div>
+    							
+    						</div>
+    					</div>
+    				</div>
+    			</div>
+    			<div class="column" id="article-card">
+    				<div class="ui fluid card">
+    					<div class="image-container">
+    						<img src="/images/avatar/large/jenny.jpg" class="visible content">
+    					</div>	
+    					<div class="content">
+    						<a class="header"><h4>Daniel Louise</h4></a>
+    						<div class="meta">
+    							<span>2 days ago</span>
+    							<a>| Artist</a>
+    							<div>
+    								<span class="left floated like"><i class="like icon"></i>20</span>
+    							    <span class="right floated view"><i class="eye icon"></i>70</span>
+    							</div>
+    							
+    						</div>
+    					</div>
+    				</div>
+    			</div>
+    			<div class="column" id="article-card">
+    				<div class="ui fluid card">
+    					<div class="image-container">
+    						<img src="/images/avatar/large/jenny.jpg" class="visible content">
+    					</div>	
+    					<div class="content">
+    						<a class="header"><h4>Daniel Louise</h4></a>
+    						<div class="meta">
+    							<span>2 days ago</span>
+    							<a>| Artist</a>
+    							<div>
+    								<span class="left floated like"><i class="like icon"></i>20</span>
+    							    <span class="right floated view"><i class="eye icon"></i>70</span>
+    							</div>
+    							
+    						</div>
+    					</div>
+    				</div>
+    			</div>
+    			<div class="column" id="article-card">
+    				<div class="ui fluid card">
+    					<div class="image-container">
+    						<img src="/images/avatar/large/jenny.jpg" class="visible content">
+    					</div>	
+    					<div class="content">
+    						<a class="header"><h4>Daniel Louise</h4></a>
+    						<div class="meta">
+    							<span>2 days ago</span>
+    							<a>| Artist</a>
+    							<div>
+    								<span class="left floated like"><i class="like icon"></i>20</span>
+    							    <span class="right floated view"><i class="eye icon"></i>70</span>
+    							</div>
+    							
+    						</div>
+    					</div>
+    				</div>
+    			</div>
+    			<div class="column fluid center aligned" >
+    				<div class="ui left labeled button more-button" tabindex="0">
+    					<a class="ui basic right pointing label">
+    						More
+    					</a>
+    					<div class="ui button">
+    						2,048	
+    					</div>
+    					
+    				</div>
+    			</div>
+    		</div>
+    		<h4 class="articles-list-header">Movie Articles</h4>
+    		<div class="ui six column grid">
+    			<div class="column" id="article-card">
+    				<div class="ui fluid card">
+    					<div class="image-container">
+    						<img src="/images/avatar/large/jenny.jpg" class="visible content">
+    					</div>	
+    					<div class="content">
+    						<a class="header"><h4>Daniel Louise</h4></a>
+    						<div class="meta">
+    							<span>2 days ago</span>
+    							<a>| Artist</a>
+    							<div>
+    								<span class="left floated like"><i class="like icon"></i>20</span>
+    							    <span class="right floated view"><i class="eye icon"></i>70</span>
+    							</div>
+    							
+    						</div>
+    					</div>
+    				</div>
+    			</div>
+    			<div class="column" id="article-card">
+    				<div class="ui fluid card">
+    					<div class="image-container">
+    						<img src="/images/avatar/large/jenny.jpg" class="visible content">
+    					</div>	
+    					<div class="content">
+    						<a class="header"><h4>Daniel Louise</h4></a>
+    						<div class="meta">
+    							<span>2 days ago</span>
+    							<a>| Artist</a>
+    							<div>
+    								<span class="left floated like"><i class="like icon"></i>20</span>
+    							    <span class="right floated view"><i class="eye icon"></i>70</span>
+    							</div>
+    							
+    						</div>
+    					</div>
+    				</div>
+    			</div>
+    			<div class="column" id="article-card">
+    				<div class="ui fluid card">
+    					<div class="image-container">
+    						<img src="/images/avatar/large/jenny.jpg" class="visible content">
+    					</div>	
+    					<div class="content">
+    						<a class="header"><h4>Daniel Louise</h4></a>
+    						<div class="meta">
+    							<span>2 days ago</span>
+    							<a>| Artist</a>
+    							<div>
+    								<span class="left floated like"><i class="like icon"></i>20</span>
+    							    <span class="right floated view"><i class="eye icon"></i>70</span>
+    							</div>
+    							
+    						</div>
+    					</div>
+    				</div>
+    			</div>
+    			<div class="column" id="article-card">
+    				<div class="ui fluid card">
+    					<div class="image-container">
+    						<img src="/images/avatar/large/jenny.jpg" class="visible content">
+    					</div>	
+    					<div class="content">
+    						<a class="header"><h4>Daniel Louise</h4></a>
+    						<div class="meta">
+    							<span>2 days ago</span>
+    							<a>| Artist</a>
+    							<div>
+    								<span class="left floated like"><i class="like icon"></i>20</span>
+    							    <span class="right floated view"><i class="eye icon"></i>70</span>
+    							</div>
+    							
+    						</div>
+    					</div>
+    				</div>
+    			</div>
+    			<div class="column" id="article-card">
+    				<div class="ui fluid card">
+    					<div class="image-container">
+    						<img src="/images/avatar/large/jenny.jpg" class="visible content">
+    					</div>	
+    					<div class="content">
+    						<a class="header"><h4>Daniel Louise</h4></a>
+    						<div class="meta">
+    							<span>2 days ago</span>
+    							<a>| Artist</a>
+    							<div>
+    								<span class="left floated like"><i class="like icon"></i>20</span>
+    							    <span class="right floated view"><i class="eye icon"></i>70</span>
+    							</div>
+    							
+    						</div>
+    					</div>
+    				</div>
+    			</div>
+    			<div class="column fluid center aligned" >
+    				<div class="ui left labeled button more-button" tabindex="0">
+    					<a class="ui basic right pointing label">
+    						More
+    					</a>
+    					<div class="ui button">
+    						2,048	
+    					</div>
+    					
+    				</div>
+    			</div>
+    		</div>
+    	</div>
     </div>
   </div>
 </div>
