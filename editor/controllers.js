@@ -1,4 +1,5 @@
 import axios from 'axios';
+import querystring from 'querystring';
 
 function saveArticle(req,res,url){
 	axios.post(url,req.body)
@@ -8,4 +9,11 @@ function saveArticle(req,res,url){
 	     .catch(err=>console.log(err));
 }
 
-export { saveArticle };
+function articleUpload(req,res){
+	const params = querystring.encode(req.body);
+	res.redirect(`/editor?${params}`);
+}
+
+
+
+export { saveArticle,articleUpload };

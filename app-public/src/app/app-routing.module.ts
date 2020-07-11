@@ -5,6 +5,7 @@ import { AdminComponent } from './admin/admin.component';
 import { PublicComponent } from './public/public.component';
 import { AdminArticleComponent } from './admin/admin-article/admin-article.component';
 
+
 const routes:Routes = [
   {
     path:'admin',
@@ -13,6 +14,10 @@ const routes:Routes = [
   {
     path:'article',
     component:AdminArticleComponent
+  },
+  {
+    path:'public',
+    loadChildren:() => import('./public/public.module').then(m => m.PublicModule)
   },
 ]
 

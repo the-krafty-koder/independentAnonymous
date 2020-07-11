@@ -1,0 +1,89 @@
+<html>
+<head>
+	<title>Article</title>
+	<link rel="stylesheet" type="text/css" href="/editor/editor.css">
+	<link rel="stylesheet" type="text/css" href="/semantic/semantic.min.css">
+	
+</head>
+
+<body>
+	<div class="wrapper">
+	<div class="ui header">
+		<nav>
+    	<div class="ui menu ">
+    		<a class="item">
+    			<i class="arrow circle left icon"></i>
+    		</a>
+    		<div class="right labeled icon menu">
+    			<a class="item">
+    				<i class="write icon"></i>
+    				
+    			</a>
+    		</div>
+    	</div>
+        </nav>
+	</div>
+	<div class="ui section" id="article-section">
+	<div class="ui grid">
+		<div class="row">
+			<div class="two wide column"></div>
+			<div class="twelve wide column ui segment">
+                {{# if errors }}
+                  {{# each errors }}
+                    <div class="ui red ">{{ this.msg }}</div>
+                  {{/each}}
+                {{/if}}
+				<form class="ui form"  method="post" action="">
+                    <div class="ui fields">
+                        <div class="eight wide field">
+                            <label>Title</label>
+                            <input type="text" name="title">
+                        </div>
+                        <div class="eight wide field">
+                            <label>Tag</label>
+                            <select id="tag" class="ui selection dropdown">
+                                <option value="song">Song</option>
+                                <option value="show">Show</option>
+                                <option value="movie">Movie</option>
+                                <option value="album">Album</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="ui fields">
+                        <div class="eight wide field">
+                            <label>Author</label>
+                            <input type="text" name="author">
+                        </div>
+                        <div class="eight wide field">
+                            <label>Artist</label>
+                            <input type="text" name="artist">
+                        </div>
+                    </div>
+                    <div class="ui fields">
+                        <div class="eight wide field">
+                            <label>Link</label>
+                            <input type="text" name="link">
+                        </div>
+                    </div>
+    		        <input class="ui button float-right" type="submit" value="Submit">
+    		    </form>
+			</div>
+		</div>
+	</div>
+	</div>
+	</div>
+    <script src="/js/jquery.min.js"></script>
+    <script src="/semantic/semantic.min.js"></script>
+    <script type="text/javascript">
+        (function initializeDropdown(){
+            const url = window.location.href.split('')[-1];
+            let dropdown = document.getElementByID('tag');
+            dropdown.value = url.split('')[0];
+
+            $('.ui.dropdown').dropdown();
+        })();
+    </script>
+    
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+<html>
+<head>
+	<title>Article</title>
+	<link rel="stylesheet" type="text/css" href="/editor/editor.css">
+	<link rel="stylesheet" type="text/css" href="/semantic/semantic.min.css">
+	
+</head>
+
+<body>
+	<div class="wrapper">
+	<div class="ui header">
+		<nav>
+    	<div class="ui menu ">
+    		<a class="item">
+    			<i class="arrow circle left icon"></i>
+    		</a>
+    		<div class="right labeled icon menu">
+    			<a class="item">
+    				<i class="write icon"></i>
+    				
+    			</a>
+    		</div>
+    	</div>
+        </nav>
+	</div>
+	<div class="ui section" id="article-section">
+	<div class="ui grid">
+		<div class="row">
+			<div class="two wide column"></div>
+			<div class="twelve wide column ui segment">
+                {{# if errors }}
+                  {{# each errors }}
+                    <div class="ui red ">{{ this.msg }}</div>
+                  {{/each}}
+                {{/if}}
+				<form class="ui form"  method="post" action="">
+                    <div class="ui fields">
+                        <div class="eight wide field">
+                            <label>Title</label>
+                            <input type="text" name="title">
+                        </div>
+                        <div class="eight wide field">
+                            <label>Tag</label>
+                            <input type="text" name="tag">
+                        </div>
+                    </div>
+                    <div class="ui fields">
+                        <div class="eight wide field">
+                            <label>Author</label>
+                            <input type="text" name="author">
+                        </div>
+                        <div class="eight wide field">
+                            <label>Artist</label>
+                            <input type="text" name="artist">
+                        </div>
+                    </div>
+                    <div class="ui fields">
+                        <div class="eight wide field">
+                            <label>SongsList</label>
+                            <input type="text" name="songsList">
+                        </div>
+                    </div>
+    		        <input class="ui button float-right" type="submit" value="Submit">
+    		    </form>
+			</div>
+		</div>
+	</div>
+	</div>
+	</div>
+    <script src="/js/jquery.min.js"></script>
+    <script src="/semantic/semantic.min.js"></script>
+    
+</body>
+
+</html>

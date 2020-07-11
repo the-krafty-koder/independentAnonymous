@@ -3,6 +3,7 @@ import createError from 'http-errors';
 import express from 'express';
 import path from 'path';
 import cookieParser from 'cookie-parser';
+import session from 'express-session';
 
 import logger from 'morgan';
 import * as db from "./api/models/db.js";
@@ -26,6 +27,11 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(session({
+    secret: 'positronx',
+    saveUninitialized: false,
+    resave: false
+}));
 //app.use(express.static(path.join(__dirname, 'node_modules')));
 app.use(express.static(path.join(__dirname, 'public')));
 
