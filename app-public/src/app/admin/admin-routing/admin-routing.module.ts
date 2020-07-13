@@ -12,9 +12,9 @@ import { AdminAnalyticsComponent } from '../admin-analytics/admin-analytics.comp
 
 const routes:Routes = [
     { path:'home',component:AdminHomeComponent },
-    { path:'articles',component:AdminArticleComponent },
-    { path:'podcasts',component:AdminPodcastComponent },
-    { path:'interviews',component:AdminInterviewComponent },
+    { path:'article',component:AdminArticleComponent },
+    { path:'podcast',component:AdminPodcastComponent },
+    { path:'interview',component:AdminInterviewComponent },
     { path:'analytics',component:AdminAnalyticsComponent },
 ];
 

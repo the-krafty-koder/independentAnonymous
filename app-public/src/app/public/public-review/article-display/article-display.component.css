@@ -1,0 +1,28 @@
+.article-display{
+	padding: 2vh;
+	margin-left:3vh;
+	margin-right:3vh;
+}
+.ui .medium .image{
+	max-width: 
+}
+
+.ui .divider{
+	padding-top: 1vh;
+	width: 70% !important;
+}
+.article-content .header{
+	padding-top: 1vh;
+}
+.article-content .content{
+	padding-top: 1vh;
+	padding-bottom:1vh;
+}
+.read-more{
+	margin-top: 1vh;
+	text-decoration: underline;
+}
+
+.meta{
+	margin-top:-1em;
+}
