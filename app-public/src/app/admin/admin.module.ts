@@ -12,6 +12,7 @@ import { AdminBaseComponentComponent } from './admin-base-component/admin-base-c
 import { AdminAnalyticsComponent } from './admin-analytics/admin-analytics.component';
 import { AdminSidebarComponent } from './admin-sidebar/admin-sidebar.component';
 import { AdminHomeComponent } from './admin-home/admin-home.component';
+import { AdminRegisterComponent } from './admin-register/admin-register.component';
 
 
 
@@ -28,7 +29,8 @@ import { AdminHomeComponent } from './admin-home/admin-home.component';
     AdminInterviewComponent,
     AdminAnalyticsComponent,
     AdminSidebarComponent,
-    AdminHomeComponent
+    AdminHomeComponent,
+    AdminRegisterComponent
   ],
   exports: [
     AdminComponent,
