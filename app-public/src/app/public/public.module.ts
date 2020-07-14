@@ -10,6 +10,7 @@ import { PublicBaseComponent } from './public-base/public-base.component';
 import { PublicHomeComponent } from './public-home/public-home.component';
 import { ArticleDisplayComponent } from './public-review/article-display/article-display.component';
 import { InterviewDisplayComponent } from './public-interview/interview-display/interview-display.component';
+import { PodcastDisplayComponent } from './public-podcast/podcast-display/podcast-display.component';
 
 @NgModule({
   imports: [
@@ -21,7 +22,7 @@ import { InterviewDisplayComponent } from './public-interview/interview-display/
     PublicReviewComponent, 
     PublicInterviewComponent, 
     PublicPodcastComponent, 
-    PublicSocialComponent, PublicBaseComponent, PublicHomeComponent, ArticleDisplayComponent, InterviewDisplayComponent
+    PublicSocialComponent, PublicBaseComponent, PublicHomeComponent, ArticleDisplayComponent, InterviewDisplayComponent, PodcastDisplayComponent
   ],
   exports: [ 
     PublicComponent,

@@ -1,0 +1,40 @@
+.section{
+	margin-left: 19vw;
+	margin-right:8vw;
+}
+
+.review-section{
+	margin-left: 11vw;
+	margin-top: 5vh;
+}
+.icon-wrapper{
+	border: solid 7px;
+	height: 110px;
+	border-radius:50%;
+	-moz-border-radius:50%;
+	-webkit-border-radius:50%;
+	width:110px;
+	display:flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	
+}
+
+.pod-section{
+	margin-top: 5vh;
+}
+
+.bar{
+	border-top: 8px solid;
+}
+
+form textarea{
+	border-radius: 0px;
+	border: solid 1px; 
+}
+.ui .button,
+.input{
+	border-radius: 0px !important;
+	border: solid 1px !important; 
+}

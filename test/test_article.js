@@ -1,5 +1,5 @@
 import assert from 'assert';
-import mongoose  = from 'mongoose';
+import mongoose from 'mongoose';
 
 let Article = mongoose.Model("Article");
 

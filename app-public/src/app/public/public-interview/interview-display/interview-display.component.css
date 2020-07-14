@@ -7,13 +7,26 @@
 }
 .meta{
 	margin-bottom: 2vh; 
+	padding-top: 1vh;
 }
 .header{
 	margin-top:2vh;
 	margin-bottom: 2vh;  
 }
-.card .image{ 
+.image{ 
+	height: 100%;
+	width:100%; 
 }
 .extra{
-	margin-bottom: -1em;
+	margin-bottom: 0vh;
+}
+.read-more{
+	padding-top: 1vh;
+	text-decoration: underline;
+}
+.description{
+	margin-top: 1vh;
+}
+.divider{
+	margin-bottom: -0.5vh; 
 }

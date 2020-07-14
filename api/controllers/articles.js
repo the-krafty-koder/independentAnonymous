@@ -1,4 +1,5 @@
 import baseController from './base.js';
+import { validateIfAdmin } from './authentication.js';
 
 let songArticleContoller = new baseController({kind:"SongArticle"});
 const albumArticleContoller = new baseController({kind:"AlbumArticle"});
@@ -11,7 +12,12 @@ const createSongArticle = (req,res) => {
     artist:req.body.artist,
     link:req.body.link
   };
-  songArticleContoller.createArticle(req,res,values);
+  if(validateIfAdmin(req.payload.email)){
+    songArticleContoller.createArticle(req,res,values);
+  }else{
+    return res.status(404)
+              .json("User is not a registered admin");
+  }
 };
 
 const createShowArticle = (req,res,next) => {

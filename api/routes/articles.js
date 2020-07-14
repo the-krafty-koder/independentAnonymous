@@ -1,5 +1,8 @@
 import express from "express";
 let router = express.Router();
+import jw from "express-jwt";
+const jwt = jw;
+const auth = jwt({secret:"Secret",userProperty:'payload'});
 
 import {
   showArticleContoller,
@@ -11,6 +14,8 @@ import {
   createSongArticle,
   createAlbumArticle,
 } from '../controllers/articles.js';
+
+import { login,register } from "../controllers/authentication.js";
 
 /*
 router
@@ -25,7 +30,7 @@ controllers.songArticleContoller.getAllArticles
 
 router
       .route('/articles/song-articles')
-      .post((req,res) => createSongArticle(req,res))
+      .post(auth,(req,res)=>createSongArticle(req,res))
       .get((req,res) => songArticleContoller.getAllArticles(req,res));
 
 
@@ -71,6 +76,9 @@ router
       .get((req,res) => movieArticleController.getArticleByID(req,res))
       .put((req,res) => movieArticleContoller.updateArticle(req,res))
       .delete((req,res) => movieArticleContoller.deleteArticle(req,res));
+
+router.post('/register',(req,res)=> register(req,res));
+router.post('/login',(req,res)=>login(req,res));
 
 
 export default router ;

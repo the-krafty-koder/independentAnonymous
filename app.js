@@ -1,3 +1,5 @@
+import dotenv from "dotenv";
+dotenv.config();
 import http from "http";
 import createError from 'http-errors';
 import express from 'express';
@@ -6,7 +8,9 @@ import cookieParser from 'cookie-parser';
 import session from 'express-session';
 
 import logger from 'morgan';
+import passport from 'passport';
 import * as db from "./api/models/db.js";
+import config from "./api/config/passport.js";
 import cors from "cors";
 
 import socket from "socket.io";
@@ -34,12 +38,19 @@ app.use(session({
 }));
 //app.use(express.static(path.join(__dirname, 'node_modules')));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(passport.initialize());
 
-
+app.use('/api',function(req, res, next) {
+  res.header('Access-Control-Allow-Origin', 'http://localhost:8080');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With,Content-Type, Accept,Authorization');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+  //res.setHeader('Access-Control-Allow-Credentials', false);
+  next();
+});
 
 app.use('/editor',function(req, res, next) {
   res.header('Access-Control-Allow-Origin', 'http://localhost:8080');
-  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With,Content-Type, Accept, Authorization');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With,Content-Type, Accept');
   res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
   //res.setHeader('Access-Control-Allow-Credentials', false);
   next();
@@ -60,6 +71,13 @@ app.use(function(req, res, next) {
 });
 
 // error handler
+app.use((err, req, res, next) => {
+  if (err.name === 'UnauthorizedError') {
+    res.status(401)
+       .json({"message" : err.name + ": " + err.message});
+     }
+});
+
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;

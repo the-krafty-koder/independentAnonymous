@@ -1,0 +1,20 @@
+.section{
+	margin-left: 10vw;
+	margin-right:5vw;
+}
+
+.review-section,
+.pod-section{
+	margin-left: 11vw;
+}
+.review-hr{
+
+}
+
+.interview-display{
+	margin-top: 2vh;
+}
+
+#review-row{
+	height: 8vh !important;
+}

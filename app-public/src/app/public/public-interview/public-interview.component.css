@@ -1,5 +1,5 @@
 .section{
-	margin-left: 8vw;
+	margin-left: 19vw;
 	margin-right:8vw;
 }
 
@@ -8,6 +8,10 @@
 }
 .review-hr{
 
+}
+
+.interview-display{
+	margin-top: 2vh;
 }
 
 #review-row{
