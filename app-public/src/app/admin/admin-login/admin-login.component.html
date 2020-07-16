@@ -6,7 +6,7 @@
     </a>
   </div>
   <div class="right menu" style="margin-right: 8vw;">
-    <a class="item" routerLink = "/register">Register</a>
+    <a class="item" routerLink = "/register">Login</a>
     <a class="item"></a>
   </div>
 </div>
@@ -16,13 +16,9 @@
 		</div>
 		<div class="six wide column">
 			<div class="ui segment" style="margin-top: 5em;">
-				<form class="ui form" (submit)="onRegisterSubmit()">
-					<p class="lead">A member? Please <a routerLink="/login">login</a> </p>
+				<p class="lead">Not a member? Please <a routerLink="/register">register</a> </p>
+				<form class="ui form" (submit)="onLoginSubmit()">
 					<div role="alert" *ngIf="formErrors" class="alert">{{ formError }}</div>
-					<div class="field form-group">
-						<label>Username</label>
-						<input type="text" name="username" class="form-control" [(ngModel)]="credentials.username">
-					</div>
 					<div class="field form-group">
 						<label>Email</label>
 						<input type="email" name="username" class="form-control" [(ngModel)]="credentials.email">
@@ -31,9 +27,10 @@
 						<label>Password</label>
 						<input type="text" name="username" class="form-control" [(ngModel)]="credentials.password">
 					</div>	
-					<input class="ui blue button" type="submit" value="Register">
+					<input class="ui blue button" type="submit" value="Login">
 				</form>
 			</div>
 		</div>
 	</div>
 </div>
+

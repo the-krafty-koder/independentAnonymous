@@ -11,17 +11,8 @@
 <div class="section">
 	<div class="ui grid">
 		<div class="row">
-			<div class="four wide column" id="song-column">
-				<app-article-display></app-article-display>
-			</div>
-			<div class="four wide column" id="album-column">
-				<app-article-display></app-article-display>
-			</div>
-			<div class="four wide column" id="show-column">
-				<app-article-display></app-article-display>
-			</div>
-			<div class="four wide column" id="movie-column">
-				<app-article-display></app-article-display>
+			<div class="four wide column" id="song-column" *ngFor="let article of articles">
+				<app-article-display [article]="article"></app-article-display>
 			</div>
 		</div>
 	</div>

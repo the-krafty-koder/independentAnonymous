@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes,RouterModule } from '@angular/router';
 import { CommonModule } from  '@angular/common';
 import { AdminRoutingModule } from './admin-routing/admin-routing.module';
+import { FormsModule } from '@angular/forms';
 
 
 import { AdminComponent } from './admin.component';
@@ -13,13 +14,14 @@ import { AdminAnalyticsComponent } from './admin-analytics/admin-analytics.compo
 import { AdminSidebarComponent } from './admin-sidebar/admin-sidebar.component';
 import { AdminHomeComponent } from './admin-home/admin-home.component';
 import { AdminRegisterComponent } from './admin-register/admin-register.component';
-
+import { AdminLoginComponent } from './admin-login/admin-login.component';
 
 
 @NgModule({
   imports:[
     CommonModule,
-    AdminRoutingModule
+    AdminRoutingModule,
+    FormsModule
   ],
   declarations: [
     AdminComponent,
@@ -30,7 +32,8 @@ import { AdminRegisterComponent } from './admin-register/admin-register.componen
     AdminAnalyticsComponent,
     AdminSidebarComponent,
     AdminHomeComponent,
-    AdminRegisterComponent
+    AdminRegisterComponent,
+    AdminLoginComponent
   ],
   exports: [
     AdminComponent,

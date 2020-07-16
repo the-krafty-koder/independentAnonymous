@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from "@angular/router";
+import { AuthenticationService } from '../../core/authentication/authentication.service';
 
 declare var $: any;
 
@@ -9,9 +11,25 @@ declare var $: any;
 })
 export class AdminBaseComponentComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private router:Router,
+    private authenticationService:AuthenticationService
+  ) { }
 
   ngOnInit() {
+  }
+
+  public logout():void{
+    this.authenticationService.logout();
+  }
+
+  public isLoggedIn():boolean{
+    return this.authenticationService.isLoggedIn();
+  }
+
+  public getUsername():String{
+    const {email,username} = this.authenticationService.getCurrentUser();
+    return username;
   }
 
   toggle() {

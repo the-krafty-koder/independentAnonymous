@@ -1,28 +1,29 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { AdminModule } from './admin/admin.module';
-import { PublicModule } from './public/public.module';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule,FormsModule } from '@angular/forms';
+import { HttpClientModule,HttpClient } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CoreComponent } from './core/core.component';
-
+import { AdminModule } from './admin/admin.module';
+import { PublicModule } from './public/public.module';
+import { AdminGuard } from './core/authentication/admin.guard';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CoreComponent, 
   ],
   imports: [
     BrowserModule,
     AdminModule,
     PublicModule,
+    FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
     AppRoutingModule,
 
   ],
-  providers: [],
+  providers: [AdminGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

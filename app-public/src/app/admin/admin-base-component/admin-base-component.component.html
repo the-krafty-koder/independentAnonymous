@@ -4,10 +4,10 @@
   </a>
   <a class="item right floated ui dropdown">
     <i class="user icon image circular"></i>
-    User
+    {{ getUsername() }}
     <div class="menu">
       <div class="item" data-value="1">Profile</div>
-      <div class="item" data-value="0">Logout</div>
+      <div class="item" data-value="0" (click)="logout()">Logout</div>
     </div>
   </a>
 </div>

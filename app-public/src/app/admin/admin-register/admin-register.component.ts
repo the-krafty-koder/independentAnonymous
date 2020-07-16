@@ -11,7 +11,7 @@ export class AdminRegisterComponent implements OnInit {
 
   public formError: string = '';
   public credentials = {
-    name: '',
+    username: '',
     email: '',
     password: ''
   };
@@ -25,7 +25,7 @@ export class AdminRegisterComponent implements OnInit {
   }
 
   public onRegisterSubmit():void{
-      if (!this.credentials.name ||
+      if (!this.credentials.username ||
           !this.credentials.email ||
           !this.credentials.password
         ){

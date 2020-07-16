@@ -1,4 +1,5 @@
 export class Admin {
     username:String;
-    email:String
+    email:String;
+    password:String;
 }

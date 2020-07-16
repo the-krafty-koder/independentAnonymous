@@ -8,7 +8,7 @@
 				<div class="fifteen wide column">
 					<div class="ui divider"></div>
 					<p class="meta">
-						Song
+						{{ article.tag }}
 					</p>
 				</div>
 			</div>
@@ -17,12 +17,10 @@
 	</div>
 	<div class="article-content">
 		<div class="header">
-			<h3>Serpentine Trials in the Bag</h3>
+			<h3>{{ article.title }}</h3>
 		</div>
 		<div class="content">
-			<p>Serpentine Trials in the Bag,Serpentine Trials in the Bag
-			Serpentine Trials in the Bag,Serpentine Trials in the Bag,
-		    Serpentine Trials in the Bag,Serpentine Trials in the Bag</p>
+			<p>{{ article.split(' ').slice(1,20).join(' ') }}</p>
 		</div>
 		<a href="" class="read-more">Read More...</a>
 	</div>

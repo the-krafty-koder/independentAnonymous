@@ -1,3 +1,3 @@
-export class Authresponse {
-    token:String
+export class AuthResponse {
+    token:string
 }

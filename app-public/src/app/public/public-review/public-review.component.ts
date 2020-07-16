@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ChangeDetectorRef } from '@angular/core';
+import { DataService } from '../../core/data-service/data.service';
 
 @Component({
   selector: 'app-public-review',
@@ -6,10 +7,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./public-review.component.css']
 })
 export class PublicReviewComponent implements OnInit {
+  public articles = [];
 
-  constructor() { }
+  constructor(
+    private dataService:DataService,
+    private cdr:ChangeDetectorRef
+  ) {};
 
   ngOnInit() {
+    this.dataService.fetchData().subscribe(results => {
+        this.articles = results[0];
+        this.cdr.detectChanges();
+    });
   }
-
 }
+
