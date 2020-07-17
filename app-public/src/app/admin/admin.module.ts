@@ -15,6 +15,7 @@ import { AdminSidebarComponent } from './admin-sidebar/admin-sidebar.component';
 import { AdminHomeComponent } from './admin-home/admin-home.component';
 import { AdminRegisterComponent } from './admin-register/admin-register.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
+import { AdminArticleDisplayComponent } from './admin-article/admin-article-display/admin-article-display.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { AdminLoginComponent } from './admin-login/admin-login.component';
     AdminSidebarComponent,
     AdminHomeComponent,
     AdminRegisterComponent,
-    AdminLoginComponent
+    AdminLoginComponent,
+    AdminArticleDisplayComponent
   ],
   exports: [
     AdminComponent,

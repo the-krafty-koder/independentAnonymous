@@ -1,0 +1,35 @@
+
+    <div class="ui fluid card">
+    	<div class="image-container">
+    		<div *ngIf="hasImage">
+    			<img src="/images/avatar/large/jenny.jpg" class="visible content">
+    		</div>
+    		<div *ngIf="!hasImage" class="right floated upload-image">
+    			<button class="ui icon button" onclick="showUploadModal(article._id)"><i class="fluid tiny plus icon"></i></button>
+    		</div>			
+    	</div>	
+    	<div class="content">
+    	    <a class="header"><h4>{{ article.title }}</h4></a>
+    			<div class="meta">
+    				<span>{{ article.date_posted }}</span>
+    				<a>| {{ article._id }}</a>
+    				<div>
+    					<span class="left floated like"><i class="like icon"></i>{{ article.comments.length }}</span>
+    				    <span class="right floated comments"><i class="eye icon"></i>{{ article.comments.length }}</span>
+    				</div>
+    							
+    			</div>
+    	</div>
+        <div class="ui small modal" id="{{ article._id }}">
+                <div class="header">{{ article._id }}</div>
+                <div class="content">
+                    <div class="ui form center aligned">
+                        <div class="ui field">
+                          <input type="file" name="image" multiple (change)="selectImage($event)">
+                        </div>
+                        <input type="submit" name="" value="Upload" (click)="onSubmit()">
+                    </div>
+                </div>
+        </div>
+    </div>
+

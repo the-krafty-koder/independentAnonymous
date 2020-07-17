@@ -14,7 +14,7 @@ import {
   createSongArticle,
   createAlbumArticle,
 } from '../controllers/articles.js';
-
+import { upload,fileUpload } from '../controllers/uploads.js';
 import { login,register } from "../controllers/authentication.js";
 
 /*
@@ -76,6 +76,8 @@ router
       .get((req,res) => movieArticleController.getArticleByID(req,res))
       .put((req,res) => movieArticleContoller.updateArticle(req,res))
       .delete((req,res) => movieArticleContoller.deleteArticle(req,res));
+
+router.post('/upload',upload.single('file'),(req,res)=> fileUpload(req,res))
 
 router.post('/register',(req,res)=> register(req,res));
 router.post('/login',(req,res)=>login(req,res));

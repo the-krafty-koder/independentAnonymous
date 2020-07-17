@@ -8,8 +8,6 @@ import { Observable,forkJoin } from 'rxjs';
 export class DataService {
   public apiBaseUrl:string = "http://localhost:3000/api";
 
-
-
   constructor(
     private http:HttpClient
   ) { }
@@ -20,6 +18,6 @@ export class DataService {
     const movieArticles = this.http.get(`${this.apiBaseUrl}/articles/movie-articles`);
     const showArticles = this.http.get(`${this.apiBaseUrl}/articles/show-articles`);
 
-    return forkJoin([songArticles,albumArticles,movieArticles,showArticles]);
+    return forkJoin([songArticles,albumArticles,movieArticles,showArticles]); // fetches data in parallel
   }
 }

@@ -12,3 +12,7 @@ $(document).ready(function(){
 function showModal(){
 	$('.ui.modal').modal('show');
 };
+
+function showUploadModal(id){
+	$(`#${id}`).modal('show');
+};

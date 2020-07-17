@@ -6,7 +6,7 @@ import express from 'express';
 import path from 'path';
 import cookieParser from 'cookie-parser';
 import session from 'express-session';
-
+import multer from 'multer';
 import logger from 'morgan';
 import passport from 'passport';
 import * as db from "./api/models/db.js";
@@ -61,8 +61,7 @@ app.use('/users', usersRouter);
 app.use('/api', apiRouter);
 app.use('/', editorRouter);
 
-
-//app.use(cors());
+app.use(cors({origin:"*"}));
 
 
 // catch 404 and forward to error handler
@@ -114,6 +113,7 @@ io.on("disconnect",()=>{
 	console.log("people left");
 })
 
+// Image uploads
 server.listen(3000,()=>console.log("Server starts listening"));
 
 

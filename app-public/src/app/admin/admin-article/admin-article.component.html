@@ -51,102 +51,10 @@
     	<div class="articles-list">
     		<h4 class="articles-list-header">Song Articles</h4>
     		<div class="ui six column grid">
-    			<div class="column" id="article-card">
-    				<div class="ui fluid card">
-    					<div class="image-container">
-    						<img src="/images/avatar/large/jenny.jpg" class="visible content">
-    					</div>	
-    					<div class="content">
-    						<a class="header"><h4>Daniel Louise</h4></a>
-    						<div class="meta">
-    							<span>2 days ago</span>
-    							<a>| Artist</a>
-    							<div>
-    								<span class="left floated like"><i class="like icon"></i>20</span>
-    							    <span class="right floated view"><i class="eye icon"></i>70</span>
-    							</div>
-    							
-    						</div>
-    					</div>
-    				</div>
-    			</div>
-    			<div class="column" id="article-card">
-    				<div class="ui fluid card">
-    					<div class="image-container">
-    						<img src="/images/avatar/large/jenny.jpg" class="visible content">
-    					</div>	
-    					<div class="content">
-    						<a class="header"><h4>Daniel Louise</h4></a>
-    						<div class="meta">
-    							<span>2 days ago</span>
-    							<a>| Artist</a>
-    							<div>
-    								<span class="left floated like"><i class="like icon"></i>20</span>
-    							    <span class="right floated view"><i class="eye icon"></i>70</span>
-    							</div>
-    							
-    						</div>
-    					</div>
-    				</div>
-    			</div>
-    			<div class="column" id="article-card">
-    				<div class="ui fluid card">
-    					<div class="image-container">
-    						<img src="/images/avatar/large/jenny.jpg" class="visible content">
-    					</div>	
-    					<div class="content">
-    						<a class="header"><h4>Daniel Louise</h4></a>
-    						<div class="meta">
-    							<span>2 days ago</span>
-    							<a>| Artist</a>
-    							<div>
-    								<span class="left floated like"><i class="like icon"></i>20</span>
-    							    <span class="right floated view"><i class="eye icon"></i>70</span>
-    							</div>
-    							
-    						</div>
-    					</div>
-    				</div>
-    			</div>
-    			<div class="column" id="article-card">
-    				<div class="ui fluid card">
-    					<div class="image-container">
-    						<img src="/images/avatar/large/jenny.jpg" class="visible content">
-    					</div>	
-    					<div class="content">
-    						<a class="header"><h4>Daniel Louise</h4></a>
-    						<div class="meta">
-    							<span>2 days ago</span>
-    							<a>| Artist</a>
-    							<div>
-    								<span class="left floated like"><i class="like icon"></i>20</span>
-    							    <span class="right floated view"><i class="eye icon"></i>70</span>
-    							</div>
-    							
-    						</div>
-    					</div>
-    				</div>
-    			</div>
-    			<div class="column" id="article-card">
-    				<div class="ui fluid card">
-    					<div class="image-container">
-    						<img src="/images/avatar/large/jenny.jpg" class="visible content">
-    					</div>	
-    					<div class="content">
-    						<a class="header"><h4>Daniel Louise</h4></a>
-    						<div class="meta">
-    							<span>2 days ago</span>
-    							<a>| Artist</a>
-    							<div>
-    								<span class="left floated like"><i class="like icon"></i>20</span>
-    							    <span class="right floated view"><i class="eye icon"></i>70</span>
-    							</div>
-    							
-    						</div>
-    					</div>
-    				</div>
-    			</div>
-    			<div class="column fluid center aligned" >
+                <div class="column" id="article-card" *ngFor="let article of songArticles">
+                     <app-admin-article-display [article]="article"></app-admin-article-display>
+                </div>
+    			<div class="column fluid center aligned right floated" >
     				<div class="ui left labeled button more-button" tabindex="0">
     					<a class="ui basic right pointing label">
     						More
@@ -160,102 +68,11 @@
     		</div>
     		<h4 class="articles-list-header">Album Articles</h4>
     		<div class="ui six column grid">
-    			<div class="column" id="article-card">
-    				<div class="ui fluid card">
-    					<div class="image-container">
-    						<img src="/images/avatar/large/jenny.jpg" class="visible content">
-    					</div>	
-    					<div class="content">
-    						<a class="header"><h4>Daniel Louise</h4></a>
-    						<div class="meta">
-    							<span>2 days ago</span>
-    							<a>| Artist</a>
-    							<div>
-    								<span class="left floated like"><i class="like icon"></i>20</span>
-    							    <span class="right floated view"><i class="eye icon"></i>70</span>
-    							</div>
-    							
-    						</div>
-    					</div>
-    				</div>
-    			</div>
-    			<div class="column" id="article-card">
-    				<div class="ui fluid card">
-    					<div class="image-container">
-    						<img src="/images/avatar/large/jenny.jpg" class="visible content">
-    					</div>	
-    					<div class="content">
-    						<a class="header"><h4>Daniel Louise</h4></a>
-    						<div class="meta">
-    							<span>2 days ago</span>
-    							<a>| Artist</a>
-    							<div>
-    								<span class="left floated like"><i class="like icon"></i>20</span>
-    							    <span class="right floated view"><i class="eye icon"></i>70</span>
-    							</div>
-    							
-    						</div>
-    					</div>
-    				</div>
-    			</div>
-    			<div class="column" id="article-card">
-    				<div class="ui fluid card">
-    					<div class="image-container">
-    						<img src="/images/avatar/large/jenny.jpg" class="visible content">
-    					</div>	
-    					<div class="content">
-    						<a class="header"><h4>Daniel Louise</h4></a>
-    						<div class="meta">
-    							<span>2 days ago</span>
-    							<a>| Artist</a>
-    							<div>
-    								<span class="left floated like"><i class="like icon"></i>20</span>
-    							    <span class="right floated view"><i class="eye icon"></i>70</span>
-    							</div>
-    							
-    						</div>
-    					</div>
-    				</div>
-    			</div>
-    			<div class="column" id="article-card">
-    				<div class="ui fluid card">
-    					<div class="image-container">
-    						<img src="/images/avatar/large/jenny.jpg" class="visible content">
-    					</div>	
-    					<div class="content">
-    						<a class="header"><h4>Daniel Louise</h4></a>
-    						<div class="meta">
-    							<span>2 days ago</span>
-    							<a>| Artist</a>
-    							<div>
-    								<span class="left floated like"><i class="like icon"></i>20</span>
-    							    <span class="right floated view"><i class="eye icon"></i>70</span>
-    							</div>
-    							
-    						</div>
-    					</div>
-    				</div>
-    			</div>
-    			<div class="column" id="article-card">
-    				<div class="ui fluid card">
-    					<div class="image-container">
-    						<img src="/images/avatar/large/jenny.jpg" class="visible content">
-    					</div>	
-    					<div class="content">
-    						<a class="header"><h4>Daniel Louise</h4></a>
-    						<div class="meta">
-    							<span>2 days ago</span>
-    							<a>| Artist</a>
-    							<div>
-    								<span class="left floated like"><i class="like icon"></i>20</span>
-    							    <span class="right floated view"><i class="eye icon"></i>70</span>
-    							</div>
-    							
-    						</div>
-    					</div>
-    				</div>
-    			</div>
-    			<div class="column fluid center aligned" >
+    			
+    			<div class="column" id="article-card" *ngFor="let article of albumArticles">
+                     <app-admin-article-display [article]="article"></app-admin-article-display>
+                </div>
+    			<div class="column fluid center aligned right floated" >
     				<div class="ui left labeled button more-button" tabindex="0">
     					<a class="ui basic right pointing label">
     						More
@@ -269,102 +86,10 @@
     		</div>
     		<h4 class="articles-list-header">Show Articles</h4>
     		<div class="ui six column grid">
-    			<div class="column" id="article-card">
-    				<div class="ui fluid card">
-    					<div class="image-container">
-    						<img src="/images/avatar/large/jenny.jpg" class="visible content">
-    					</div>	
-    					<div class="content">
-    						<a class="header"><h4>Daniel Louise</h4></a>
-    						<div class="meta">
-    							<span>2 days ago</span>
-    							<a>| Artist</a>
-    							<div>
-    								<span class="left floated like"><i class="like icon"></i>20</span>
-    							    <span class="right floated view"><i class="eye icon"></i>70</span>
-    							</div>
-    							
-    						</div>
-    					</div>
-    				</div>
-    			</div>
-    			<div class="column" id="article-card">
-    				<div class="ui fluid card">
-    					<div class="image-container">
-    						<img src="/images/avatar/large/jenny.jpg" class="visible content">
-    					</div>	
-    					<div class="content">
-    						<a class="header"><h4>Daniel Louise</h4></a>
-    						<div class="meta">
-    							<span>2 days ago</span>
-    							<a>| Artist</a>
-    							<div>
-    								<span class="left floated like"><i class="like icon"></i>20</span>
-    							    <span class="right floated view"><i class="eye icon"></i>70</span>
-    							</div>
-    							
-    						</div>
-    					</div>
-    				</div>
-    			</div>
-    			<div class="column" id="article-card">
-    				<div class="ui fluid card">
-    					<div class="image-container">
-    						<img src="/images/avatar/large/jenny.jpg" class="visible content">
-    					</div>	
-    					<div class="content">
-    						<a class="header"><h4>Daniel Louise</h4></a>
-    						<div class="meta">
-    							<span>2 days ago</span>
-    							<a>| Artist</a>
-    							<div>
-    								<span class="left floated like"><i class="like icon"></i>20</span>
-    							    <span class="right floated view"><i class="eye icon"></i>70</span>
-    							</div>
-    							
-    						</div>
-    					</div>
-    				</div>
-    			</div>
-    			<div class="column" id="article-card">
-    				<div class="ui fluid card">
-    					<div class="image-container">
-    						<img src="/images/avatar/large/jenny.jpg" class="visible content">
-    					</div>	
-    					<div class="content">
-    						<a class="header"><h4>Daniel Louise</h4></a>
-    						<div class="meta">
-    							<span>2 days ago</span>
-    							<a>| Artist</a>
-    							<div>
-    								<span class="left floated like"><i class="like icon"></i>20</span>
-    							    <span class="right floated view"><i class="eye icon"></i>70</span>
-    							</div>
-    							
-    						</div>
-    					</div>
-    				</div>
-    			</div>
-    			<div class="column" id="article-card">
-    				<div class="ui fluid card">
-    					<div class="image-container">
-    						<img src="/images/avatar/large/jenny.jpg" class="visible content">
-    					</div>	
-    					<div class="content">
-    						<a class="header"><h4>Daniel Louise</h4></a>
-    						<div class="meta">
-    							<span>2 days ago</span>
-    							<a>| Artist</a>
-    							<div>
-    								<span class="left floated like"><i class="like icon"></i>20</span>
-    							    <span class="right floated view"><i class="eye icon"></i>70</span>
-    							</div>
-    							
-    						</div>
-    					</div>
-    				</div>
-    			</div>
-    			<div class="column fluid center aligned" >
+                <div class="column" id="article-card" *ngFor="let article of showArticles">
+                     <app-admin-article-display [article]="article"></app-admin-article-display>
+                </div>
+    			<div class="column fluid center aligned right floated" >
     				<div class="ui left labeled button more-button" tabindex="0">
     					<a class="ui basic right pointing label">
     						More
@@ -372,108 +97,16 @@
     					<div class="ui button">
     						2,048	
     					</div>
-    					
     				</div>
     			</div>
     		</div>
     		<h4 class="articles-list-header">Movie Articles</h4>
     		<div class="ui six column grid">
-    			<div class="column" id="article-card">
-    				<div class="ui fluid card">
-    					<div class="image-container">
-    						<img src="/images/avatar/large/jenny.jpg" class="visible content">
-    					</div>	
-    					<div class="content">
-    						<a class="header"><h4>Daniel Louise</h4></a>
-    						<div class="meta">
-    							<span>2 days ago</span>
-    							<a>| Artist</a>
-    							<div>
-    								<span class="left floated like"><i class="like icon"></i>20</span>
-    							    <span class="right floated view"><i class="eye icon"></i>70</span>
-    							</div>
-    							
-    						</div>
-    					</div>
-    				</div>
-    			</div>
-    			<div class="column" id="article-card">
-    				<div class="ui fluid card">
-    					<div class="image-container">
-    						<img src="/images/avatar/large/jenny.jpg" class="visible content">
-    					</div>	
-    					<div class="content">
-    						<a class="header"><h4>Daniel Louise</h4></a>
-    						<div class="meta">
-    							<span>2 days ago</span>
-    							<a>| Artist</a>
-    							<div>
-    								<span class="left floated like"><i class="like icon"></i>20</span>
-    							    <span class="right floated view"><i class="eye icon"></i>70</span>
-    							</div>
-    							
-    						</div>
-    					</div>
-    				</div>
-    			</div>
-    			<div class="column" id="article-card">
-    				<div class="ui fluid card">
-    					<div class="image-container">
-    						<img src="/images/avatar/large/jenny.jpg" class="visible content">
-    					</div>	
-    					<div class="content">
-    						<a class="header"><h4>Daniel Louise</h4></a>
-    						<div class="meta">
-    							<span>2 days ago</span>
-    							<a>| Artist</a>
-    							<div>
-    								<span class="left floated like"><i class="like icon"></i>20</span>
-    							    <span class="right floated view"><i class="eye icon"></i>70</span>
-    							</div>
-    							
-    						</div>
-    					</div>
-    				</div>
-    			</div>
-    			<div class="column" id="article-card">
-    				<div class="ui fluid card">
-    					<div class="image-container">
-    						<img src="/images/avatar/large/jenny.jpg" class="visible content">
-    					</div>	
-    					<div class="content">
-    						<a class="header"><h4>Daniel Louise</h4></a>
-    						<div class="meta">
-    							<span>2 days ago</span>
-    							<a>| Artist</a>
-    							<div>
-    								<span class="left floated like"><i class="like icon"></i>20</span>
-    							    <span class="right floated view"><i class="eye icon"></i>70</span>
-    							</div>
-    							
-    						</div>
-    					</div>
-    				</div>
-    			</div>
-    			<div class="column" id="article-card">
-    				<div class="ui fluid card">
-    					<div class="image-container">
-    						<img src="/images/avatar/large/jenny.jpg" class="visible content">
-    					</div>	
-    					<div class="content">
-    						<a class="header"><h4>Daniel Louise</h4></a>
-    						<div class="meta">
-    							<span>2 days ago</span>
-    							<a>| Artist</a>
-    							<div>
-    								<span class="left floated like"><i class="like icon"></i>20</span>
-    							    <span class="right floated view"><i class="eye icon"></i>70</span>
-    							</div>
-    							
-    						</div>
-    					</div>
-    				</div>
-    			</div>
-    			<div class="column fluid center aligned" >
+                <div class="column" id="article-card" *ngFor="let article of movieArticles">
+                     <app-admin-article-display [article]="article"></app-admin-article-display>
+                </div>
+
+    			<div class="column fluid center aligned right floated" >
     				<div class="ui left labeled button more-button" tabindex="0">
     					<a class="ui basic right pointing label">
     						More

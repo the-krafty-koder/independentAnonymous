@@ -43,7 +43,7 @@ class baseController {
 
            })
            .catch(err => res.status(404)
-                            .json(error));
+                            .json(err));
   };
 
   deleteArticle(req,res){
@@ -58,9 +58,9 @@ class baseController {
 
   updateArticle(req,res)  {
     Article.find(this.discriminator)
-                        .then(result => {
-                          article = results.filter(entry => entry._id == req.params.articleID)
-
+                        .then(results => {
+                          let article = results.filter(entry => entry._id == req.params.articleID)
+                          console.log(results)
                           article.title = req.body.title || article.title
                           article.content = req.body.content || article.content
                           article.tag = req.body.tag || article.tag
@@ -69,15 +69,20 @@ class baseController {
                           article.artist = req.body.artist  || article.artist
                           article.link = req.body.link  || article.link
                           article.save((error,article) => {
-                            if(error)return res.status(404)
-                                               .json(error)
+                            if(error){
+                              console.log(error);
+                              return res.status(404)
+                                               .json(error)}
                             return res.status(200)
                                       .json(article)
                           });
 
                         })
-                        .catch(err => res.status(404)
-                                         .json(error));
+                        .catch(err => {
+                            console.log(err);
+                            res.status(404)
+                               .json(err);
+                        });
 
   };
 
@@ -89,7 +94,7 @@ class baseController {
                         .json(result);
             })
             .catch(err => res.status(404)
-                             .json(error));
+                             .json(err));
   };
 };
 
