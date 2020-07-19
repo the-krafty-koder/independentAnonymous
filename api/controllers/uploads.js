@@ -1,11 +1,18 @@
 import multer from 'multer';
 
+const returnPath = function(name){
+	let tag = name.split("-")[0];
+  	return `uploads/images/${tag}-articles/`;
+}
+
 const storage = multer.diskStorage({
   destination:(req,file,callback) => {
-    callback(null,"uploads/images/");
+  	let dest = returnPath(file.originalname);
+    callback(null,dest);
   },
   filename:(req,file,callback) => {
-    callback(null,file.originalname);
+  	let filename = file.originalname.split("-")[1];
+    callback(null,filename);
   },
 });
 

@@ -1,6 +1,9 @@
 import { Component, OnInit,Input,ChangeDetectorRef } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { HttpClient,HttpHeaders } from '@angular/common/http';
+import { Router } from '@angular/router';
+
+declare let $:any;
 
 @Component({
   selector: 'app-admin-article-display',
@@ -14,15 +17,18 @@ export class AdminArticleDisplayComponent implements OnInit {
   public image:any;
   public extension:string;
   public hasImage:boolean = false;
+  public imageUrl:string;
 
   constructor(
     private http:HttpClient,
     private formBuilder: FormBuilder,
-    private cdr:ChangeDetectorRef
+    private cdr:ChangeDetectorRef,
+    private router:Router
   ) { }
 
   ngOnInit() {
     this.hasImage = this.checkForImage();
+    this.imageUrl = `http://localhost:3000/${this.article.image}`;
     this.cdr.detectChanges();
   }
 
@@ -42,12 +48,10 @@ export class AdminArticleDisplayComponent implements OnInit {
   public onSubmit():void{
 
     const formData = new FormData();
+    const filename = `${this.article.tag}-${this.article._id}.${this.extension}`
 
-    formData.append('file',this.image,`${this.article._id}.${this.extension}`);
+    formData.append('file',this.image,filename);
     formData.append('file_id',this.article._id);
-
-    console.log(this.article._id);
-    console.log(formData.get("file_id"));
 
     const options = {
       headers: new HttpHeaders({ "Content-Type": "multipart/form-data"})
@@ -55,12 +59,15 @@ export class AdminArticleDisplayComponent implements OnInit {
 
     this.http.post<any>(`${this.url}/upload`,formData).subscribe((result)=>{
 
-        const postData = new FormData();
-        postData.append('image',result.originalname);
+        const postData = {image:result.path};
 
-        this.http.put(`${this.url}/articles/song-articles/${this.article._id}`,postData).subscribe(result=>console.log(result));
+        return this.http.put(`${this.url}/articles/${this.article.tag}-articles/${this.article._id}`,postData).subscribe(result=>this.router.navigateByUrl('/admin/article'));
         
       },(err)=>console.log(err));
     };
+
+  public onClickButton(){
+    $(`#${this.article._id}`).modal('show');
+  }
 };
 

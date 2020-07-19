@@ -1,27 +1,26 @@
 
     <div class="ui fluid card">
     	<div class="image-container">
-    		<div *ngIf="hasImage">
-    			<img src="/images/avatar/large/jenny.jpg" class="visible content">
+    		<div *ngIf="hasImage " class="ui image">
+    			<img src="{{imageUrl}}" class="fluid visible content img-sef">
     		</div>
     		<div *ngIf="!hasImage" class="right floated upload-image">
-    			<button class="ui icon button" onclick="showUploadModal(article._id)"><i class="fluid tiny plus icon"></i></button>
+    			<button class="ui icon button" (click)="onClickButton()"><i class="fluid tiny plus icon"></i></button>
     		</div>			
     	</div>	
     	<div class="content">
     	    <a class="header"><h4>{{ article.title }}</h4></a>
     			<div class="meta">
-    				<span>{{ article.date_posted }}</span>
-    				<a>| {{ article._id }}</a>
+    				<span>{{ article.date_posted | date:"short"}}</span>
+    				<span>| {{ article.author | titlecase }}</span>
     				<div>
     					<span class="left floated like"><i class="like icon"></i>{{ article.comments.length }}</span>
-    				    <span class="right floated comments"><i class="eye icon"></i>{{ article.comments.length }}</span>
+    				    <span class="right floated comments"><i class="comment outline icon"></i>{{ article.comments.length }}</span>
     				</div>
     							
     			</div>
-    	</div>
-        <div class="ui small modal" id="{{ article._id }}">
-                <div class="header">{{ article._id }}</div>
+            <div class="ui small modal" id="{{ article._id }}">
+                <div class="header">Set Image for article: {{ article.title | slice:0:10}}...</div>
                 <div class="content">
                     <div class="ui form center aligned">
                         <div class="ui field">
@@ -30,6 +29,8 @@
                         <input type="submit" name="" value="Upload" (click)="onSubmit()">
                     </div>
                 </div>
-        </div>
+            </div>
+    	</div>
+        
     </div>
 

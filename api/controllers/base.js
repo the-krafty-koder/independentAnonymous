@@ -59,8 +59,7 @@ class baseController {
   updateArticle(req,res)  {
     Article.find(this.discriminator)
                         .then(results => {
-                          let article = results.filter(entry => entry._id == req.params.articleID)
-                          console.log(results)
+                          let article = results.filter(entry => entry._id == req.params.articleID)[0]
                           article.title = req.body.title || article.title
                           article.content = req.body.content || article.content
                           article.tag = req.body.tag || article.tag
@@ -68,6 +67,7 @@ class baseController {
                           article.image = req.body.image  || article.image
                           article.artist = req.body.artist  || article.artist
                           article.link = req.body.link  || article.link
+                          article.ratings = req.body.ratings || article.ratings
                           article.save((error,article) => {
                             if(error){
                               console.log(error);

@@ -1,3 +1,17 @@
 .upload-image{
 	height: 6vh;
 }
+
+.small.image{
+	min-height:15vh;
+	max-height: 15vh; 
+}
+
+.img-sef{
+    object-fit: fill;
+    min-height: 15vh !important; 
+	max-height: 15vh !important; 
+}
+.icon{
+	padding-right: 1vw;
+}
