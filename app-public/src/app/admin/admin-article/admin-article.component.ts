@@ -1,6 +1,7 @@
 import { Component, OnInit,ChangeDetectorRef } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { DataService } from '../../core/data-service/data.service';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-admin-article',
@@ -12,6 +13,10 @@ export class AdminArticleComponent implements OnInit {
   public albumArticles = [];
   public movieArticles = [];
   public showArticles = [];
+  public songUrl:string = `${environment.apiBaseUrl}/create/song-article`;
+  public showUrl:string = `${environment.apiBaseUrl}/create/show-article`;
+  public albumUrl:string = `${environment.apiBaseUrl}/create/album-article`;
+  public movieUrl:string = `${environment.apiBaseUrl}/create/movie-article`;
 
   constructor(
     private dataService:DataService,

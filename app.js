@@ -19,6 +19,7 @@ import indexRouter from  './routes/index.js';
 import usersRouter from './routes/users.js';
 import apiRouter from './api/routes/articles.js';
 import editorRouter from './editor/routes.js';
+import uploadsRouter from './api/routes/uploads.js';
 
 let app = express();
 let __dirname = process.cwd();
@@ -38,11 +39,11 @@ app.use(session({
 }));
 //app.use(express.static(path.join(__dirname, 'node_modules')));
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.static(path.join(__dirname, 'uploads')));
+app.use(express.static(path.join(__dirname, '')));
 app.use(passport.initialize());
 
 app.use('/api',function(req, res, next) {
-  res.header('Access-Control-Allow-Origin', 'http://localhost:8080');
+  res.header('Access-Control-Allow-Origin', 'http://127.0.0.1:3000');
   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With,Content-Type, Accept,Authorization');
   res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
   //res.setHeader('Access-Control-Allow-Credentials', false);
@@ -56,11 +57,15 @@ app.use(function(req, res, next) {
   //res.setHeader('Access-Control-Allow-Credentials', false);
   next();
 });
+app.use(function(req, res, next) {
+  next();
+});
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/api', apiRouter);
 app.use('/', editorRouter);
+app.use('/uploads', uploadsRouter);
 
 app.use(cors({origin:"*"}));
 

@@ -7,35 +7,35 @@
     		<div class="ui blue button" onclick="showModal()">
     			Create
     		</div>
-    		<div class="ui tiny modal">
+    		<div class="ui tiny modal" id="new-article-modal">
     			<div class="header">Choose Type</div>
     			<div class="content">
     				<form class="ui form">
     					<div class="fields">
-    						<div class="seven wide field ui center aligned segment" style="margin-left: 1em;">
-    							<a>
-    								<i class="large music icon"></i>
+    						<div class="seven wide field ui center aligned segment"  style="margin-left: 1em;">
+    							<a href="{{songUrl}}">
+    								<i class="large music icon"></i>           
     							</a>
     							<label>Song</label>
     						</div>    	
     						<div class="one wide field "></div>						
-    						<div class="seven wide field ui center aligned segment">
-    							<a>
+    						<div class="seven wide field ui center aligned segment" >
+    							<a href="{{movieUrl}}">
     								<i class="large film icon"></i>
     							</a>
     							<label>Movie</label>
     						</div>
     					</div>
     					<div class="fields">
-    						<div class="seven wide field ui center aligned segment" style="margin-left: 1em;">
-    							<a>
+    						<div class="seven wide field ui center aligned segment"  style="margin-left: 1em;">
+    							<a href="{{showUrl}}">
     								<i class="large video icon"></i>
     							</a>
     							<label>Show</label>
     						</div>   
     						<div class="one wide field "></div>	 							
-    						<div class="seven wide field ui center aligned segment">
-    							<a>
+    						<div class="seven wide field ui center aligned segment" >
+    							<a href="{{albumUrl}}">
     								<i class="large folder icon"></i>
     							</a>
     							<label>Album</label>

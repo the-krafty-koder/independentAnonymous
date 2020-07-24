@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
 import * as models from "./article.js";
 import * as user_models from "./user.js";
+import * as media_models from "./media.js";
 
 let dbURI = 'mongodb://localHost/independentAnonymous';
 mongoose.connect(dbURI,{useNewUrlParser:true});

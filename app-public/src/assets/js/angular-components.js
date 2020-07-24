@@ -10,7 +10,7 @@ $(document).ready(function(){
  });
 
 function showModal(){
-	$('.ui.modal').modal('show');
+	$('#new-article-modal').modal('show');
 };
 
 function showUploadModal(id){

@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ChangeDetectorRef } from '@angular/core';
+import { HttpClient,HttpHeaders } from "@angular/common/http";
+import { DataService } from '../../core/data-service/data.service';
 
 @Component({
   selector: 'app-public-interview',
@@ -6,10 +8,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./public-interview.component.css']
 })
 export class PublicInterviewComponent implements OnInit {
+  public interviews:any;
 
-  constructor() { }
+  constructor(
+    private dataService:DataService,
+    private http:HttpClient,
+    private cdr:ChangeDetectorRef
+  ) { }
 
   ngOnInit() {
+    this.dataService.fetchInterviewData().subscribe((result)=>{
+      this.interviews = result;
+      this.cdr.detectChanges();
+    });
+
   }
 
 }

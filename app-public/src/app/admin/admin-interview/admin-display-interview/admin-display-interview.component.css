@@ -1,0 +1,16 @@
+.interview-card{
+	max-width: 5vw;
+	margin-left:0vh; 
+}
+
+.upload-image{
+	height: 6vh;
+}
+
+.medium.image{
+	height:15vh;
+}
+
+.img-sef{
+    object-fit: contain; 
+}

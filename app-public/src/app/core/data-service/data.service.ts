@@ -20,4 +20,12 @@ export class DataService {
 
     return forkJoin([songArticles,albumArticles,movieArticles,showArticles]); // fetches data in parallel
   }
+
+  public fetchInterviewData():any{
+    return this.http.get(`${this.apiBaseUrl}/interview`);
+  }
+
+  public fetchPodcastData():any{
+    return this.http.get(`${this.apiBaseUrl}/podcast`);
+  }
 }

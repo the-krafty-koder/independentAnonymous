@@ -13,26 +13,28 @@ const baseValidator = [
 	                .isEmpty()
 	                .withMessage('Author is required'),
 	  check('tag').not()
-	              .isEmpty()
-	               .withMessage('Tag is required')
+	                .isEmpty()
+	                .withMessage('Author is required'),
 	]
 
 let router = express.Router();
-let apiUrl = "http://127.0.0.1:8080/api/articles/";
+let apiUrl = 'http://127.0.0.1:3000/api/articles/';
 
 router.get('/editor', function(req, res, next) {
   res.render('editor', { title: 'Text editor' });
+  next();
 });
 
-router.post('/editor',function(req,res){
+router.post('/editor/',function(req,res){
 	let tag = req.query.tag;
 	let article = req.body.article;
 	req.body = {
 		content:article,
 		...req.query
 	};
+	console.log(tag);
 
-	if(tag==="song") saveArticle(req,res,`${apiUrl}song-articles`);
+	if(tag==="song") saveArticle(req,res,`${apiUrl}song-articles/`);
 	if(tag==="show") saveArticle(req,res,`${apiUrl}show-articles`);
 	if(tag==="album")saveArticle(req,res,`${apiUrl}album-articles`);
 	if(tag==="movie") saveArticle(req,res,`${apiUrl}movie-articles`);

@@ -3,31 +3,30 @@
     <div class="row">
       <div class="six wide column">
         <div class="ui slide masked reveal image">
-          <img src="assets/img/w.jpg" class="visible content">
-          <div class="hidden content"><p style="padding: 2vh;">Description</p></div>
+          <img src="{{imageUrl}}" class="img-fit">
+          <div class="hidden content"><p style="padding: 2vh;">{{interview.description}}</p></div>
         </div>
       </div>
       <div class="ten wide column cont">
         <div class="content">
           <div class="meta">
-            <span class="date">4/5/2020 |</span>
-            <span class="time">5 min</span>
+            <span class="date">{{ interview.date_posted | date:"short"}} |</span>
+            <span class="time">{{ interview.file.length }} min</span>
           </div>
-          <a class="header"> <h3>Interview:The Paper Crafts</h3></a>
+          <a class="header"> <h3>Interview:{{ interview.title }}</h3></a>
           <div class="description">
-            <p>Interview:The Paper CraftsInterview:The Paper CraftsInterview:The Paper Crafts
-               Interview:The Paper CraftsInterview
+            <p>{{ interview.description }}
             </p>
-            <a href="" class="read-more">Watch/Listen</a>
+            <a [routerLink]="['/interviews/view',interview._id]" class="read-more">Watch/Listen</a>
           </div>
         </div>
         <div class="ui divider">
         <div class="extra content">
           <p class="left floated">
-            <i class="eye icon"></i>79
+            <i class="comment outline icon"></i>{{ interview.comments.length }}
           </p>
           <p class="right floated">
-            <i class="like icon"></i>45
+            <i class="like icon"></i>{{ interview.likes.length }}
           </p>
         </div>
       </div>

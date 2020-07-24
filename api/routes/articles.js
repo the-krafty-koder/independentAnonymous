@@ -14,7 +14,7 @@ import {
   createSongArticle,
   createAlbumArticle,
 } from '../controllers/articles.js';
-import { upload,fileUpload } from '../controllers/uploads.js';
+import { upload,fileUpload,interviewCreate,interviewUpdate,podcastCreate,podcastUpdate,getPodcastByID,getInterviewByID,getAllInterviews,deleteInterview,deletePodcast } from '../controllers/uploads.js';
 import { login,register } from "../controllers/authentication.js";
 
 /*
@@ -30,7 +30,7 @@ controllers.songArticleContoller.getAllArticles
 
 router
       .route('/articles/song-articles')
-      .post(auth,(req,res)=>createSongArticle(req,res))
+      .post((req,res)=>createSongArticle(req,res))
       .get((req,res) => songArticleContoller.getAllArticles(req,res));
 
 
@@ -77,10 +77,33 @@ router
       .put((req,res) => movieArticleContoller.updateArticle(req,res))
       .delete((req,res) => movieArticleContoller.deleteArticle(req,res));
 
-router.post('/upload',upload.single('file'),(req,res)=> fileUpload(req,res))
+router
+      .route('/interview')
+      .post((req,res) => interviewCreate(req,res))
+      .get((req,res) => getAllInterviews(req,res));
+
+router
+      .route('/interview/:interviewID')
+      .put((req,res) => interviewUpdate(req,res))
+      .delete((req,res) => deleteInterview(req,res))
+      .get((req,res) => getInterviewByID(req,res));
+
+router
+      .route('/podcast')
+      .post((req,res) => podcastCreate(req,res))
+      .get((req,res) => getAllInterviews(req,res));
+
+router
+      .route('/podcast/:podcastID')
+      .put((req,res) => podcastUpdate(req,res))
+      .delete((req,res) => deletePodcast(req,res))
+      .get((req,res) => getPodcastByID(req,res));
+
+router.post('/upload/articles/image',upload.single('file'),(req,res)=> fileUpload(req,res))
 
 router.post('/register',(req,res)=> register(req,res));
 router.post('/login',(req,res)=>login(req,res));
+
 
 
 export default router ;

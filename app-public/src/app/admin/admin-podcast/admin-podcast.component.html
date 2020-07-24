@@ -1,9 +1,61 @@
+<app-admin-base-component></app-admin-base-component>
 <div class="ui bottom attached segment pushable">
   <app-admin-sidebar></app-admin-sidebar>
   <div class="pusher">
     <div class="ui basic segment">
-      <h3 class="ui header">Application Content</h3>
-      <p>admin-podcast works!</p>
+      <div class="four wide column float right">
+    		<div class="ui blue button" onclick="showModal()">
+    			Add Podcast
+    		</div>
+    		<div class="ui tiny modal" id="new-article-modal">
+    			<div class="header">Add Podcast</div>
+    			<div class="content">
+    				<form class="ui form">
+    					<div class="ui two fields">
+    						<div class="field ui form-group"  style="margin-left: 1em;">
+    							<label>Title</label>
+    							<input type="text" name="Title" [formControl]="title">
+    						</div>    
+    						<div class="field ui form-group"  style="margin-left: 1em;">
+    							<label>Tag</label>
+    							<input type="text" name="tag" [formControl]="tag">
+    						</div>  							
+    					</div>
+    					<div class="ui two fields">
+    						<div class="field ui form-group"  style="margin-left: 1em;">
+    							<label>Description</label>
+    							<input type="text" name="description" [formControl]="description">
+    						</div>    
+    						<div class="field ui form-group"  style="margin-left: 1em;">
+    							<label>Creator</label>
+    							<input type="text" name="creator" [formControl]="creator">
+    						</div>  							
+    					</div>
+    					<div class="ui two fields">
+    						<div class="field ui form-group"  style="margin-left: 1em;">
+    							<label>File</label>
+    							<input type="file" name="file" multiple (change)="selectVideo($event)">
+    						</div>    
+    						<div class="field ui form-group"  style="margin-left: 1em;">
+    							<label>Image</label>
+    							<input type="file" name="file" multiple (change)="selectImage($event)">
+    						</div>  							
+    					</div>    					
+    				</form>
+    			</div>
+    			<div class="actions">
+    				<input type="submit" name="" value="Submit" (click)="onSubmit()">
+    			</div>
+    		</div>
+    	</div>
+    	<div class="articles-list">
+    		<div class="ui grid six column" >
+                
+                    <div class="column" id="article-card" *ngFor="let podcast of podcasts" style="padding-top: 1vh;padding-bottom: 1vh;">
+                      <app-admin-display-podcast [podcast]="podcast"></app-admin-display-podcast>
+                    </div>    
+    		</div>
+    	</div>
     </div>
   </div>
 </div>

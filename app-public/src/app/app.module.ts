@@ -8,10 +8,12 @@ import { AppComponent } from './app.component';
 import { AdminModule } from './admin/admin.module';
 import { PublicModule } from './public/public.module';
 import { AdminGuard } from './core/authentication/admin.guard';
+import { AdminDisplayPodcastComponent } from './admin-display-podcast/admin-display-podcast.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    AdminDisplayPodcastComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ChangeDetectorRef } from '@angular/core';
+import { HttpClient,HttpHeaders } from "@angular/common/http";
+import { environment } from '../../../environments/environment';
+import { DataService } from '../../core/data-service/data.service';
 
 @Component({
   selector: 'app-public-podcast',
@@ -7,9 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PublicPodcastComponent implements OnInit {
 
-  constructor() { }
+  public podcasts:any;
+
+  constructor(
+    private dataService:DataService,
+    private http:HttpClient,
+    private cdr:ChangeDetectorRef
+  ) { }
 
   ngOnInit() {
-  }
+    this.dataService.fetchPodcastData().subscribe((result)=>{
+      this.podcasts = result;
+      this.cdr.detectChanges();
+    });
 
+  }
 }

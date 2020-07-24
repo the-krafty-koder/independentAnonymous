@@ -3,8 +3,61 @@
   <app-admin-sidebar></app-admin-sidebar>
   <div class="pusher">
     <div class="ui basic segment">
-      <h3 class="ui header">Application Content</h3>
-      <p>admin-interview works!</p>
+        <div class="four wide column float right">
+    		<div class="ui blue button" onclick="showModal()">
+    			Add Interview
+    		</div>
+    		<div class="ui tiny modal" id="new-article-modal">
+    			<div class="header">Choose Type</div>
+    			<div class="content">
+    				<form class="ui form">
+    					<div class="ui two fields">
+    						<div class="field ui form-group"  style="margin-left: 1em;">
+    							<label>Title</label>
+    							<input type="text" name="Title" [formControl]="title">
+    						</div>    
+    						<div class="field ui form-group"  style="margin-left: 1em;">
+    							<label>Tag</label>
+    							<input type="text" name="tag" [formControl]="tag">
+    						</div>  							
+    					</div>
+    					<div class="ui two fields">
+    						<div class="field ui form-group"  style="margin-left: 1em;">
+    							<label>Description</label>
+    							<input type="text" name="description" [formControl]="description">
+    						</div>    
+    						<div class="field ui form-group"  style="margin-left: 1em;">
+    							<label>Creator</label>
+    							<input type="text" name="creator" [formControl]="creator">
+    						</div>  							
+    					</div>
+    					<div class="ui two fields">
+    						<div class="field ui form-group"  style="margin-left: 1em;">
+    							<label>File</label>
+    							<input type="file" name="file" multiple (change)="selectVideo($event)">
+    						</div>    
+    						<div class="field ui form-group"  style="margin-left: 1em;">
+    							<label>Image</label>
+    							<input type="file" name="file" multiple (change)="selectImage($event)">
+    						</div>  							
+    					</div>   
+    					<input type="submit" name="" value="Submit" (click)="onSubmit()"> 					
+    				</form>
+    			</div>
+    			<div class="actions">
+    				<div class="ui proceed button">Proceed</div>
+    			</div>
+    		</div>
+    	</div>
+    	<div class="articles-list">
+    		<div class="ui grid eight column" >
+                <div *ngFor="let interview of interviews">
+                    <div class="column" id="article-card" style="padding-top: 1vh;padding-bottom: 1vh;">
+                      <app-admin-display-interview [interview]="interview"></app-admin-display-interview>
+                    </div>    
+                </div>	
+    		</div>
+    	</div>
     </div>
   </div>
 </div>

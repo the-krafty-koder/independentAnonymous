@@ -1,7 +1,7 @@
 <div class="article-display">
 	<div class="article-image">
 		<a href="https://google.com" class="ui medium image">
-			<img src="assets/img/w.jpg">
+			<img src="{{imageUrl}}">
 		</a>
 		<div class="ui grid">
 			<div class="row">
@@ -17,11 +17,11 @@
 	</div>
 	<div class="article-content">
 		<div class="header">
-			<h3>{{ article.title }}</h3>
+			<h3>{{ article.title | titlecase}}</h3>
 		</div>
 		<div class="content">
-			<p>{{ article.content.split(' ').slice(1,20).join(' ') }}</p>
+			<p>{{ article.content.split(' ').slice(1,20).join(' ') }}...</p>
 		</div>
-		<a href="" class="read-more">Read More...</a>
+		<a [routerLink]="['/reviews/article',article.tag,article._id]" class="read-more">Read More</a>
 	</div>
 </div>

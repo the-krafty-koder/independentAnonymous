@@ -1,0 +1,9 @@
+.video-player{
+	height:5vh !important;
+	width: auto;
+	margin-top: -1vh;
+}
+.meta{
+	padding-top: 2vh;
+	border-bottom: solid 20px black;
+}

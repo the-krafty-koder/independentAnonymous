@@ -11,13 +11,10 @@
 <div class="section">
 	<div class="ui grid">
 		<div class="row">
-			<div class="eleven wide column" >
+			<div class="eleven wide column" *ngFor="let interview of interviews">
 				<div class="interview-display">
-					<app-interview-display ></app-interview-display>
-				</div>	
-				<div class="interview-display">
-					<app-interview-display ></app-interview-display>
-				</div>			
+					<app-interview-display [interview]="interview"></app-interview-display>
+				</div>					
 			</div>
 		</div>
 	</div>

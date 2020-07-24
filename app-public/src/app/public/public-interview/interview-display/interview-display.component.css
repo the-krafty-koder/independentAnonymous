@@ -17,6 +17,9 @@
 	height: 100%;
 	width:100%; 
 }
+.img-fit{
+	object-fit: fill;
+}
 .extra{
 	margin-bottom: 0vh;
 }

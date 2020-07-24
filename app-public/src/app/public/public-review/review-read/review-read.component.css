@@ -1,0 +1,27 @@
+.banner{
+	max-height: 10vh;
+}
+
+.banner-image{
+	object-fit: contain;
+}
+
+.title{
+	padding-top: 2vh;
+	padding-bottom: 2vh;
+}
+.content,
+.title{
+	margin-right: 1vw;
+	margin-left: 1vw; 
+}
+
+.content{
+	white-space: pre-wrap;
+}
+
+#ad{
+	position: relative;
+	bottom: 0;
+	width: 100%;
+}

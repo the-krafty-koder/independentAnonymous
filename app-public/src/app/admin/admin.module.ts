@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes,RouterModule } from '@angular/router';
 import { CommonModule } from  '@angular/common';
 import { AdminRoutingModule } from './admin-routing/admin-routing.module';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule,FormsModule } from '@angular/forms';
 
 
 import { AdminComponent } from './admin.component';
@@ -16,13 +16,16 @@ import { AdminHomeComponent } from './admin-home/admin-home.component';
 import { AdminRegisterComponent } from './admin-register/admin-register.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { AdminArticleDisplayComponent } from './admin-article/admin-article-display/admin-article-display.component';
+import { AdminDisplayInterviewComponent } from './admin-interview/admin-display-interview/admin-display-interview.component';
+import { AdminDisplayPodcastComponent } from './admin-podcast/admin-display-podcast/admin-display-podcast.component';
 
 
 @NgModule({
   imports:[
     CommonModule,
     AdminRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   declarations: [
     AdminComponent,
@@ -35,7 +38,9 @@ import { AdminArticleDisplayComponent } from './admin-article/admin-article-disp
     AdminHomeComponent,
     AdminRegisterComponent,
     AdminLoginComponent,
-    AdminArticleDisplayComponent
+    AdminArticleDisplayComponent,
+    AdminDisplayInterviewComponent,
+    AdminDisplayPodcastComponent
   ],
   exports: [
     AdminComponent,

@@ -1,0 +1,48 @@
+
+<div class="ui top attached menu" style="border-radius: 0px;">
+  <div class="left menu" style="margin-left: 8vw;">
+  	<a class="item"></a>
+    <a class="item" >
+  	  <p>Independent <br>Anonymous<br></p>	
+    </a>
+  </div>
+  <div class="right menu" style="margin-right: 8vw;">
+    <a class="item" routerLink = "/reviews">Reviews</a>
+    <a class="item" routerLink = "/interviews">Interviews</a>
+    <a class="item" routerLink = "/podcasts">Podcasts</a>
+    <a class="item" routerLink = "/social">Social</a>
+    <a class="item"></a>
+  </div>
+</div>
+<div class="video-segment">
+  <div class="ui grid">
+    <div class="row">
+      <div class="three wide column"></div>
+      <div class="ten wide column">
+        <div class="meta">
+            <div class="ui grid row">
+              <div class="eight wide column">
+                <div class="ui image medium">
+                  <img src="{{imageUrl}}" class="ui fluid">
+                </div>
+              </div>
+              <div class="eight wide column">
+                <h2> {{interview.title}} </h2>
+                <h3> {{interview.description }} </h3>
+              </div>
+            </div>          
+        </div>
+      </div>
+    </div>
+    <div class="row" style="margin-top: -5vh;">
+      <div class="three wide column"></div>
+      <div class="ten wide column">
+        <div class="video-player" class="ui">
+          <video width="100%" [src]="videoUrl" controls>
+          </video>
+        </div>
+      </div>
+      <div class="seven wide column"></div>
+    </div>
+  </div>
+</div>

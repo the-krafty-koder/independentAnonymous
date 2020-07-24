@@ -57,7 +57,7 @@ export class AdminArticleDisplayComponent implements OnInit {
       headers: new HttpHeaders({ "Content-Type": "multipart/form-data"})
     };
 
-    this.http.post<any>(`${this.url}/upload`,formData).subscribe((result)=>{
+    this.http.post<any>(`${this.url}/upload/articles/image`,formData).subscribe((result)=>{
 
         const postData = {image:result.path};
 

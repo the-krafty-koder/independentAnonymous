@@ -11,6 +11,9 @@ import { PublicHomeComponent } from './public-home/public-home.component';
 import { ArticleDisplayComponent } from './public-review/article-display/article-display.component';
 import { InterviewDisplayComponent } from './public-interview/interview-display/interview-display.component';
 import { PodcastDisplayComponent } from './public-podcast/podcast-display/podcast-display.component';
+import { ReviewReadComponent } from './public-review/review-read/review-read.component';
+import { InterviewWatchComponent } from './public-interview/interview-watch/interview-watch.component';
+import { PodcastListenComponent } from './public-podcast/podcast-listen/podcast-listen.component';
 
 @NgModule({
   imports: [
@@ -22,7 +25,7 @@ import { PodcastDisplayComponent } from './public-podcast/podcast-display/podcas
     PublicReviewComponent, 
     PublicInterviewComponent, 
     PublicPodcastComponent, 
-    PublicSocialComponent, PublicBaseComponent, PublicHomeComponent, ArticleDisplayComponent, InterviewDisplayComponent, PodcastDisplayComponent
+    PublicSocialComponent, PublicBaseComponent, PublicHomeComponent, ArticleDisplayComponent, InterviewDisplayComponent, PodcastDisplayComponent, ReviewReadComponent, InterviewWatchComponent, PodcastListenComponent
   ],
   exports: [ 
     PublicComponent,

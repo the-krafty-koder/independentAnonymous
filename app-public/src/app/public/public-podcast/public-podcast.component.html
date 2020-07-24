@@ -11,14 +11,8 @@
 <div class="pod-section">
 	<div class="ui grid">
 		<div class="row">
-			<div class="eleven wide column">
-				<app-podcast-display></app-podcast-display>
-				<hr>
-				<app-podcast-display></app-podcast-display>
-				<hr>
-				<app-podcast-display></app-podcast-display>
-				<hr>
-				<app-podcast-display></app-podcast-display>
+			<div class="eleven wide column" style="margin-left:7.5vw;" *ngFor="let podcast of podcasts">
+				<app-podcast-display [podcast]="podcast"></app-podcast-display>
 				<hr>
 			</div>
 		</div>

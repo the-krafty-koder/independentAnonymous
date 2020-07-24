@@ -1,0 +1,31 @@
+<app-public-base></app-public-base>
+<div class="section">
+	<div class="ui grid">
+		<div class="row">
+			<div class="two wide column"></div>
+			<div class="eight wide column">
+			</div>
+		</div>
+		<div class="row">
+			<div class="four wide column"></div>
+			<div class="eight wide column ">
+				<div class="center floated">
+					<h2 style="text-align: center;"> {{ article.title | titlecase }}</h2>
+					<img src="{{apiUrl}}" class="ui fluid image banner-image">
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="two wide column"></div>
+			<div class="twelve wide column">
+				<div class="content">{{ article.content }}</div>
+			</div>
+		</div>
+		<div class="row" id="ad">
+			<div class="two wide column"></div>
+			<div class=" twelve wide column">
+				<img src="assets/img/banner.jpg" class="ui fluid image banner-image">
+			</div>
+		</div>
+	</div>
+</div>

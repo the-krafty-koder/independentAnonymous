@@ -7,10 +7,11 @@
 }
 
 .hr{
-	margin-top: 1vh;
 	margin-bottom: 1vh;
 }
-
+.medium .image{
+	max-height:4vh;
+}
 .description{
-	padding-top: 6vh;
+	padding-top: 3vh;
 }

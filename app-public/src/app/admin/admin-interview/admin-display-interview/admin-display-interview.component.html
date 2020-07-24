@@ -1,0 +1,52 @@
+
+    <div class="ui card" id="interview-card">
+    	<div class="image-container">
+    		<div  class="center floated upload-image" style="text-align: center">
+    			<button class="ui icon button" (click)="onViewClicked()" style="text-align: center"><i class="fluid tiny eye icon"></i></button>
+    			<button class="ui icon button" (click)="onEditButtonClicked()"><i class="fluid tiny write icon"></i></button>
+    			<button class="ui icon button" (click)="onDeleteClicked()"><i class="fluid tiny trash icon">
+    			</i></button>
+    		</div>			
+    	</div>	
+    	<div class="content">
+    	        <a class="header"><h4>{{ interview.title }}</h4></a>
+    			<div class="meta">
+    				<span>{{ interview.date_posted | date:"short"}}</span>
+    				<span>| {{ interview.creator | titlecase }}</span>
+    				<div>
+    					<span class="left floated like"><i class="like icon"></i>{{ interview.comments.length }}</span>
+    				    <span class="right floated comments"><i class="comment outline icon"></i>{{ interview.comments.length }}</span>
+    				</div>
+    							
+    			</div>
+    			<div class="ui small modal" id="{{ interview._id }}">
+                <div class="header">Update Interview: {{ interview._id | slice:0:10}}...</div>
+                <div class="content">
+                    <div class="ui form center aligned">
+                        <div class="ui two fields">
+                        	<div class="ui field">
+                              <label>Title</label>
+                              <input type="text" name="image" [formControl]="title" value="{{interview.title}}">
+                            </div>
+                            <div class="ui field">
+                              <label>Tag</label>
+                              <input type="text" name="image" [formControl]="tag" value="{{interview.tag}}">
+                            </div>
+                        </div>
+                        <div class="ui two fields">
+                        	<div class="ui field">
+                              <label>Description</label>
+                              <input type="text" name="image" [formControl]="description" value="{{interview.description}}">
+                            </div>
+                            <div class="ui field">
+                              <label>Creator</label>
+                              <input type="text" name="image" [formControl]="creator" value="{{interview.creator}}">
+                            </div>
+                        </div>
+                        <input type="submit" name="" value="Upload" (click)="onEditSubmit()">
+                    </div>
+                </div>
+                </div>
+    		
+    	</div>     
+    </div>

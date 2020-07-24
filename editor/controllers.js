@@ -2,6 +2,7 @@ import axios from 'axios';
 import querystring from 'querystring';
 
 function saveArticle(req,res,url){
+	console.log("Sent");
 	axios.post(url,req.body)
 	     .then(response => {
 	     	res.redirect("/api/articles/song-articles"); //refactor
