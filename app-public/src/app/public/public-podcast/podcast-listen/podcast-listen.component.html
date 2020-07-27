@@ -2,7 +2,7 @@
 <div class="ui top attached menu" style="border-radius: 0px;">
   <div class="left menu" style="margin-left: 8vw;">
   	<a class="item"></a>
-    <a class="item" >
+    <a class="item" style="margin-top: #063a7a;">
   	  <p>Independent <br>Anonymous<br></p>	
     </a>
   </div>
@@ -14,21 +14,27 @@
     <a class="item"></a>
   </div>
 </div>
-<div class="video-segment">
+<div class="video-segment" style="margin-top: 2vh;margin-bottom: 7vh;">  
   <div class="ui grid">
     <div class="row">
       <div class="three wide column"></div>
-      <div class="ten wide column">
+      <div class="eleven wide column">
         <div class="meta">
             <div class="ui grid row">
-              <div class="eight wide column">
+              <div class="six wide column">
                 <div class="ui image medium">
                   <img src="{{imageUrl}}" class="ui fluid">
                 </div>
               </div>
               <div class="eight wide column">
-                <h2> {{podcast.title}} </h2>
-                <h3> {{podcast.description }} </h3>
+                <div class="description" style="margin-top: 10vh;">
+                  <h4 > {{podcast.title}} </h4>
+                  <h2> {{podcast.description}} </h2>
+                  <h2> | {{podcast.date_posted | date:"mediumDate"}} </h2>
+                </div>
+                <div class="response" style="margin-top: 2vh;">
+                  <button class="ui red icon button" (click)="addLike()" ><i class="ui like icon"></i> {{ likes }}</button>
+                </div>
               </div>
             </div>          
         </div>
@@ -36,9 +42,10 @@
     </div>
     <div class="row" style="margin-top: -5vh;">
       <div class="three wide column"></div>
-      <div class="ten wide column">
-        <div class="video-player" class="ui">
-          <audio width="100%" [src]="podcastUrl" controls>
+      <div class="eleven wide column">
+        <div class="audio-player ui fluid" >
+          <audio width="100%" >
+            <source src="{{podcastUrl}}" type="audio/mpeg">
           </audio>
         </div>
       </div>
@@ -46,3 +53,44 @@
     </div>
   </div>
 </div>
+<footer class="ui footer bottom attached">
+      <div class="right menu" >
+          <div class="ui grid row">
+            <div class="two wide column center floated footer-title" style="margin-left: 10.5vw;height:20vh;">
+              <a class="">
+                      <p style="padding-top: 5vh;color: black;">Independent <br>Anonymous<br></p> 
+                    </a>
+            </div>
+            <div class="six wide column right floated" style="padding-right: 10.5vw;border-left: solid 3px white;padding-top: 3vh;">
+          
+          <div class="ui grid row center floated">
+          <div class="four wide column">
+            <div class="icon-wrapper" >
+              <i class="ui huge facebook icon"></i>
+            </div>
+          </div>
+          <div class="four wide column">
+            <div class="icon-wrapper">
+              <i class="ui huge twitter icon"></i>
+            </div>  
+          </div>
+          <div class="four wide column">
+            <div class="icon-wrapper">
+              <i class="ui huge instagram icon"></i>
+            </div>
+          </div>
+          <div class="four wide column">
+            <div class="icon-wrapper">
+              <i class="ui huge google icon"></i>
+            </div>
+          </div>
+            </div>
+          </div>
+
+            </div>
+    </div>
+</footer>
+
+
+              
+

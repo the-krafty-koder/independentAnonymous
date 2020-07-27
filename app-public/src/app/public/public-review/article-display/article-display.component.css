@@ -7,9 +7,8 @@
 	max-width: 
 }
 
-.ui .divider{
-	padding-top: 1vh;
-	width: 70% !important;
+hr{
+	width: 85% !important;
 }
 .article-content .header{
 	padding-top: 1vh;
@@ -24,5 +23,10 @@
 }
 
 .meta{
-	margin-top:-1em;
+	margin-top:1vh;
+}
+
+a{
+	font-family: 'Nunito';
+	color: #063a7a;
 }

@@ -8,10 +8,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
   <link rel="stylesheet" href="assets/semantic/dist/semantic.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/greghub/green-audio-player/dist/css/green-audio-player.min.css">
+  <script src="https://cdn.jsdelivr.net/gh/greghub/green-audio-player/dist/js/green-audio-player.min.js"></script>
 </head>
 <body>
   <app-root></app-root>
   <script type="text/javascript" src="assets/semantic/dist/semantic.min.js"></script>
   <script type="text/javascript" src="assets/js/angular-components.js"></script>
+  <script type="text/javascript">
+  	document.addEventListener('DOMContentLoaded',function() {
+    	new GreenAudioPlayer('.audio-player');
+    });
+  </script>
 </body>
 </html>

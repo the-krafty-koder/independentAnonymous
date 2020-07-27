@@ -5,7 +5,20 @@
 
 .review-section{
 	margin-left: 11vw;
-	margin-top: 5vh;
+	margin-top: 2vh;
+}
+.review-section{
+	margin-top: 2vh;
+}
+#review-row{
+	border-top:solid 4px #063a7a; 
+	background-color: #063a7a; 
+	border-bottom:solid 4px #063a7a;
+	margin-top: 1vh;
+	color: white;
+	opacity: 0.9;
+	font-weight: bold;
+
 }
 .icon-wrapper{
 	border: solid 7px;
@@ -37,4 +50,21 @@ form textarea{
 .input{
 	border-radius: 0px !important;
 	border: solid 1px !important; 
+}
+
+
+footer{
+	padding-bottom: 3vh;
+	padding-top: 2vh;
+	background-color: black;
+	color:white; 
+	height: 20vh;
+	border-bottom: 3px white solid; 
+}
+
+.footer-title{
+	background-color:white !important;
+	color: black !important;
+	font-weight: bold;
+	font-size: 3vh;
 }

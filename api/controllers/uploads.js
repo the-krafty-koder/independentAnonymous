@@ -196,6 +196,16 @@ const getAllInterviews = function(req,res) {
                              .json(err));
 };
 
+const getAllPodcasts = function(req,res) {
+     Podcast.find()
+            .then(result => {
+              return res.status(200)
+                        .json(result.reverse());
+            })
+            .catch(err => res.status(404)
+                             .json(err));
+};
+
 const deleteInterview = function(req,res){
   Interview.findByIdAndRemove(req.params.interviewID)
           .exec((error,interview)=>{
@@ -216,4 +226,4 @@ const deletePodcast = function(req,res){
           });
 }
 
-export { upload,fileUpload,mediaUpload,interviewCreate,interviewUpdate,podcastCreate,podcastUpdate,getPodcastByID,getInterviewByID,getAllInterviews,deleteInterview,deletePodcast };
+export { upload,fileUpload,mediaUpload,interviewCreate,interviewUpdate,podcastCreate,podcastUpdate,getPodcastByID,getInterviewByID,getAllInterviews,getAllPodcasts,deleteInterview,deletePodcast };

@@ -14,7 +14,10 @@
     <a class="item"></a>
   </div>
 </div>
-<div class="video-segment">
+<div class="ui grid">
+<div class="row">
+<div class="sixteen wide column">
+  <div class="video-segment" style="margin-bottom: 6vh;">
   <div class="ui grid">
     <div class="row">
       <div class="three wide column"></div>
@@ -22,13 +25,8 @@
         <div class="meta">
             <div class="ui grid row">
               <div class="eight wide column">
-                <div class="ui image medium">
-                  <img src="{{imageUrl}}" class="ui fluid">
-                </div>
-              </div>
-              <div class="eight wide column">
-                <h2> {{interview.title}} </h2>
-                <h3> {{interview.description }} </h3>
+                <h4> {{interview.title}} </h4>
+                <h2> {{interview.description }} </h2>
               </div>
             </div>          
         </div>
@@ -37,7 +35,7 @@
     <div class="row" style="margin-top: -5vh;">
       <div class="three wide column"></div>
       <div class="ten wide column">
-        <div class="video-player" class="ui">
+        <div class="ui video-player">
           <video width="100%" [src]="videoUrl" controls>
           </video>
         </div>
@@ -45,4 +43,48 @@
       <div class="seven wide column"></div>
     </div>
   </div>
+  </div>
+</div>
+</div>
+<div class="row">
+<div class="sixteen wide column">
+<footer class="ui footer">
+      <div class="right" >
+          <div class="ui grid row">
+            <div class="two wide column center floated footer-title" style="margin-left: 10.5vw;height:20vh;">
+              <a class="">
+                      <p style="padding-top: 5vh;color: black;">Independent <br>Anonymous<br></p> 
+                    </a>
+            </div>
+            <div class="six wide column right floated" style="padding-right: 10.5vw;border-left: solid 3px white;padding-top: 3vh;">
+          
+          <div class="ui grid row center floated">
+          <div class="four wide column">
+            <div class="icon-wrapper" >
+              <i class="ui huge facebook icon"></i>
+            </div>
+          </div>
+          <div class="four wide column">
+            <div class="icon-wrapper">
+              <i class="ui huge twitter icon"></i>
+            </div>  
+          </div>
+          <div class="four wide column">
+            <div class="icon-wrapper">
+              <i class="ui huge instagram icon"></i>
+            </div>
+          </div>
+          <div class="four wide column">
+            <div class="icon-wrapper">
+              <i class="ui huge google icon"></i>
+            </div>
+          </div>
+            </div>
+          </div>
+
+            </div>
+    </div>
+</footer>
+</div>
+</div>
 </div>

@@ -5,3 +5,8 @@
 .menu{
 	height: 12vh;
 }
+.header{
+	background-color: #063a7a !important;
+	color: white !important;
+	margin-bottom: 1vh;
+}

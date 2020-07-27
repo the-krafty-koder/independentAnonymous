@@ -1,6 +1,8 @@
 import { Component, OnInit,ChangeDetectorRef } from '@angular/core';
 import { DataService } from '../../core/data-service/data.service';
 
+declare let $:any;
+
 @Component({
   selector: 'app-public-review',
   templateUrl: './public-review.component.html',
@@ -33,6 +35,12 @@ export class PublicReviewComponent implements OnInit {
         [this.songArticles,this.albumArticles,this.movieArticles,this.showArticles] = results;
         this.displayLess(4);
         this.cdr.detectChanges();    // update this.articles after Observable emits data
+    });
+
+    $(document).ready(function(){
+      setTimeout(function(){
+        document.getElementById('footer').classList.remove('hide-footer');
+      },3000); 
     });
   }
 }

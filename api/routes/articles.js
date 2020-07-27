@@ -14,7 +14,7 @@ import {
   createSongArticle,
   createAlbumArticle,
 } from '../controllers/articles.js';
-import { upload,fileUpload,interviewCreate,interviewUpdate,podcastCreate,podcastUpdate,getPodcastByID,getInterviewByID,getAllInterviews,deleteInterview,deletePodcast } from '../controllers/uploads.js';
+import { upload,fileUpload,interviewCreate,interviewUpdate,podcastCreate,podcastUpdate,getPodcastByID,getInterviewByID,getAllInterviews,deleteInterview,deletePodcast,getAllPodcasts } from '../controllers/uploads.js';
 import { login,register } from "../controllers/authentication.js";
 
 /*
@@ -91,7 +91,7 @@ router
 router
       .route('/podcast')
       .post((req,res) => podcastCreate(req,res))
-      .get((req,res) => getAllInterviews(req,res));
+      .get((req,res) => getAllPodcasts(req,res));
 
 router
       .route('/podcast/:podcastID')

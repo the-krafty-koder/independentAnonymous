@@ -5,15 +5,40 @@
 
 .review-section{
 	margin-left: 11vw;
+	margin-top: 2vh;
 }
 .review-hr{
 
+}
+
+#review-row{
+	border-top:solid 4px #063a7a; 
+	background-color: #063a7a; 
+	border-bottom:solid 4px #063a7a;
+	margin-top: 1vh;
+	color: white;
+	opacity: 0.9;
 }
 
 .interview-display{
 	margin-top: 2vh;
 }
 
-#review-row{
-	height: 8vh !important;
+footer{
+	padding-bottom: 3vh;
+	padding-top: 2vh;
+	background-color: black;
+	color:white; 
+	height: 20vh;
+	border-bottom: 3px white solid; 
+}
+
+.hide-footer{
+	display: none;
+}
+
+.footer-title{
+	background-color:white !important;
+	color: black !important;
+	font-weight: bold;
 }

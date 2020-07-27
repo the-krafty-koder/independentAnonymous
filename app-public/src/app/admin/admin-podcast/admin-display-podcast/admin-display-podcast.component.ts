@@ -30,7 +30,7 @@ export class AdminDisplayPodcastComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.imageUrl = `${this.url}/${this.podcast.image}`;
+    this.imageUrl = `${this.url}/${this.podcast.image}`; 
     this.cdr.detectChanges();
   }
 

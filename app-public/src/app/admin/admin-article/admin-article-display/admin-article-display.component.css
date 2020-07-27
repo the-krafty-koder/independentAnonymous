@@ -2,8 +2,11 @@
 	height: 6vh;
 }
 
-.medium.image{
-	height:15vh;
+.medium.image img{
+	min-height:15vh;
+	max-height: 15vh;
+	max-width:100%; 
+	min-width:100%;
 }
 
 .img-sef{

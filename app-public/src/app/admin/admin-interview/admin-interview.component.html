@@ -50,12 +50,12 @@
     		</div>
     	</div>
     	<div class="articles-list">
-    		<div class="ui grid eight column" >
-                <div *ngFor="let interview of interviews">
-                    <div class="column" id="article-card" style="padding-top: 1vh;padding-bottom: 1vh;">
+    		<div class="ui grid six column" style="margin-top:4vh;">
+
+                    <div class="column" id="article-card" *ngFor="let interview of interviews" style="padding-top: 1vh;padding-bottom: 1vh;">
                       <app-admin-display-interview [interview]="interview"></app-admin-display-interview>
                     </div>    
-                </div>	
+
     		</div>
     	</div>
     </div>

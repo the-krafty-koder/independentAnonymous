@@ -1,0 +1,23 @@
+.audio-player{
+	width:100%;
+	margin-top:2vh; 
+}
+
+footer{
+	margin-top: 7%;
+	padding-top: 2vh;
+	background-color: black;
+	color:white; 
+	height: 20vh;
+	border-bottom: 3px white solid; 
+	margin-bottom: -1vh;
+}
+
+.footer-title{
+	background-color:white !important;
+	color: black !important;
+	font-family: 'Nunito';
+	font-weight: bold;
+	font-size: 3vh;
+
+}

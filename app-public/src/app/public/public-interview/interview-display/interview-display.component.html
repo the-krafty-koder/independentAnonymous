@@ -1,19 +1,19 @@
 <div class="ui fluid card">
   <div class="ui grid">
     <div class="row">
-      <div class="six wide column">
-        <div class="ui slide masked reveal image">
-          <img src="{{imageUrl}}" class="img-fit">
+      <div class="seven wide column">
+        <div class="ui slide masked reveal medium image">
+          <img src="{{imageUrl}}" class="img-fit fluid">
           <div class="hidden content"><p style="padding: 2vh;">{{interview.description}}</p></div>
         </div>
       </div>
-      <div class="ten wide column cont">
+      <div class="nine wide column cont">
         <div class="content">
           <div class="meta">
             <span class="date">{{ interview.date_posted | date:"short"}} |</span>
             <span class="time">{{ interview.file.length }} min</span>
           </div>
-          <a class="header"> <h3>Interview:{{ interview.title }}</h3></a>
+          <a [routerLink]="['/interviews/view',interview._id]" class="header"> <h3>Interview: {{ interview.title }}</h3></a>
           <div class="description">
             <p>{{ interview.description }}
             </p>
@@ -26,8 +26,9 @@
             <i class="comment outline icon"></i>{{ interview.comments.length }}
           </p>
           <p class="right floated">
-            <i class="like icon"></i>{{ interview.likes.length }}
+            <i class="like icon"></i>{{ interview.likes }}
           </p>
+        </div>
         </div>
       </div>
     </div>

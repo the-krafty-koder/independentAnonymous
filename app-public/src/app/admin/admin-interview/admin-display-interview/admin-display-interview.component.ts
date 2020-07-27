@@ -48,6 +48,7 @@ export class AdminDisplayInterviewComponent implements OnInit {
     };
 
     this.http.put(`${environment.apiBaseUrl}/api/interview/${this.interview._id}`,editFormValues).subscribe((result)=>console.log(result));
+    this.router.navigateByUrl('/admin/interview');
   }
 
  
@@ -58,6 +59,7 @@ export class AdminDisplayInterviewComponent implements OnInit {
 
   public onDeleteClicked():any{
     this.http.delete(`${environment.apiBaseUrl}/api/interview/${this.interview._id}`).subscribe((result)=>this.router.navigateByUrl('/admin/interview'));
+    this.router.navigateByUrl('/admin/interview');
   }
 
   public onViewClicked():any{

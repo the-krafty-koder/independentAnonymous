@@ -2,6 +2,8 @@ import { Component, OnInit,ChangeDetectorRef } from '@angular/core';
 import { HttpClient,HttpHeaders } from "@angular/common/http";
 import { DataService } from '../../core/data-service/data.service';
 
+declare let $:any;
+
 @Component({
   selector: 'app-public-interview',
   templateUrl: './public-interview.component.html',
@@ -22,6 +24,11 @@ export class PublicInterviewComponent implements OnInit {
       this.cdr.detectChanges();
     });
 
+    $(document).ready(function(){
+      setTimeout(function(){
+        document.getElementById('footer').classList.remove('hide-footer');
+      },3000); 
+    });
   }
 
 }
