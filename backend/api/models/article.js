@@ -1,13 +1,15 @@
 import mongoose from "mongoose";
 
-let options = {discriminatorKey:"kind"};
+let options = {discriminatorKey:"kind"};  // Article discriminator
 
+// Base schema for all articles comments
 const articleCommentSchema = new mongoose.Schema({
   name:{type:String},
   content:{type:String},
   email:{type:String}
 });
 
+// Base schema for all articles
 const articleSchema = new mongoose.Schema({
   title:{type:String,required:true},
   content:{type:String,required:true},
@@ -21,10 +23,13 @@ const articleSchema = new mongoose.Schema({
 
 const Article = mongoose.model('Article',articleSchema,'Articles');
 
+// Song article schema
 const songArticleSchema = new mongoose.Schema({
   artist:{type:String,required:true},
   link:{type:String}
 });
+
+// Called before a save is done on the a save is done
 songArticleSchema.pre('save',function(next){
   this.tag = "song";
 
@@ -33,7 +38,7 @@ songArticleSchema.pre('save',function(next){
 
 const songArticle = Article.discriminator("SongArticle",songArticleSchema);
 
-
+// Album article schema
 const albumArticleSchema = new mongoose.Schema({
   artist:{type:String,required:true},
   songsList:[String],
@@ -46,7 +51,7 @@ albumArticleSchema.pre('save',function(next){
 
 const albumArticle = Article.discriminator("AlbumArticle",albumArticleSchema);
 
-
+// Show article schema
 let showArticleSchema = new mongoose.Schema({
   production:[String],
   season:{type:Number,required:true},
@@ -61,7 +66,7 @@ showArticleSchema.pre('save',function(next){
 
 const showArticle = Article.discriminator("ShowArticle",showArticleSchema);
 
-
+// Movie article schema
 const movieArticleSchema = new mongoose.Schema({
   production:[String],
   year:{type:String}

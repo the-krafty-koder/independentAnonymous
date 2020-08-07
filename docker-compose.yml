@@ -1,0 +1,19 @@
+version: '3.0'
+services:
+  angular:
+    build: frontend
+    ports:
+    - "4200:4200"
+
+  express:
+    build: backend
+    ports:
+    - "3000:3000"
+    links:
+    - database
+
+  database:
+    build: db 
+    ports:
+    - "27017:27017"
+

@@ -1,12 +1,17 @@
 import baseController from './base.js';
 import { validateIfAdmin } from './authentication.js';
 
+// Initiating the respective article controllers 
 let songArticleContoller = new baseController({kind:"SongArticle"});
 const albumArticleContoller = new baseController({kind:"AlbumArticle"});
 const movieArticleContoller = new baseController({kind:"MovieArticle"});
 const showArticleContoller = new baseController({kind:"ShowArticle"});
 
-
+/*
+ * createSongArticle() => void
+ * req: Request object
+ * res: Response object
+*/
 const createSongArticle = (req,res) => {
   let values = {
     artist:req.body.artist,
@@ -22,6 +27,11 @@ const createSongArticle = (req,res) => {
   }*/
 };
 
+/*
+ * createShowArticle() => void
+ * req: Request object
+ * res: Response object
+*/
 const createShowArticle = (req,res,next) => {
   let values = {
     production:req.body.production,
@@ -32,6 +42,11 @@ const createShowArticle = (req,res,next) => {
   showArticleContoller.createArticle(req,res,values);
 }
 
+/*
+ * createMovieArticle() => void
+ * req: Request object
+ * res: Response object
+*/
 const createMovieArticle = (req,res) => {
   let values = {
     production:req.body.production,
@@ -40,6 +55,11 @@ const createMovieArticle = (req,res) => {
   movieArticleContoller.createArticle(req,res,values);
 };
 
+/*
+ * createAArticle() => void
+ * req: Request object
+ * res: Response object
+*/
 const createAlbumArticle = (req,res) => {
   let values = {
     artist:req.body.artist,

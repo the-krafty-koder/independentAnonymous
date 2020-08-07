@@ -3,6 +3,11 @@ import passport from "passport";
 
 const Admin = mongoose.model("Admin");
 
+/*
+ * validateIfAdmin(email) => Boolean
+ * email: String
+ * Checks if user with given email is a valid Admin
+*/
 const validateIfAdmin = function(email){
 	Admin.findOne({email:email})
 	     .exec((err,user)=>{
@@ -12,24 +17,39 @@ const validateIfAdmin = function(email){
 	     	return true;
 	     });
 }
+
+/*
+ * register(req,res) => Object
+ * req: Request object
+ * res: Response object
+ *
+ * Registers a new user as an Admin
+*/
 const register = function(req,res){
 	const admin = new Admin({
 		username:req.body.username,
 		email:req.body.email
 	})
 
-	admin.setPassword(req.body.password);
+	admin.setPassword(req.body.password);    // sets user password
 	admin.save((err)=>{
 		if(err){
 			return res.status(404).json(err);
 	    }else{
-	    	const token = admin.generateJWT();
+	    	const token = admin.generateJWT();  // generates JSON web token
 	    	return res.status(200)
 	    	          .json({ token });
 	    };
 	});
 };
 
+/*
+ * login(req,res) => Object
+ * req: Request object
+ * res: Response object
+ *
+ * Authenticates a new user
+*/
 const login = function(req,res){
 	passport.authenticate('local',(error,admin,info)=>{
 		let token;

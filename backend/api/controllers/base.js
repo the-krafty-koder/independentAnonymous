@@ -2,11 +2,24 @@ import mongoose from "mongoose";
 
 let Article = mongoose.model('Article');
 
+/*
+ * register(req,res) => Object
+ * req: Request object
+ * res: Response object
+ *
+ * Base contoller class for all articles
+*/
 class baseController {
   constructor(discriminator) {
     this.discriminator = discriminator;
   };
 
+ /*
+  * createArticle(req,res,values)=> Object
+  * values:Object
+  *
+  * Creates new articles
+ */
   createArticle(req,res,values) {
     let articleValues = [
       {
@@ -32,11 +45,16 @@ class baseController {
     });
   };
 
+  /*
+   * getArticleByID(req,res) => Object
+   * values:Object
+   *
+   * Retrieves articles by ID
+  */
   getArticleByID(req,res)  {
-    Article.find(this.discriminator)
-           //.findById(req.params.articleID)
+    Article.find(this.discriminator)   // locates specific kind of articles first
            .then(results => {
-             result = results.filter(entry => entry._id == req.params.articleID)
+             result = results.filter(entry => entry._id == req.params.articleID)  // filter to get article of ID
 
              return res.status(200)
                        .json(result);
@@ -46,8 +64,13 @@ class baseController {
                             .json(err));
   };
 
+  /*
+   * deleteArticle(req,res) => Object
+   *
+   * Deletes articles by ID
+  */
   deleteArticle(req,res){
-    Article.findByIdAndRemove(req.params.articleID)
+    Article.findByIdAndRemove(req.params.articleID)   // retrieves articles by ID
             .exec((error,article) => {
               if(error)return res.status(404)
                                  .json(error)
@@ -56,10 +79,15 @@ class baseController {
             })
   };
 
+  /*
+   * updateArticle(req,res) => Object
+   *
+   * Updates articles by ID
+  */
   updateArticle(req,res)  {
     Article.find(this.discriminator)
                         .then(results => {
-                          let article = results.filter(entry => entry._id == req.params.articleID)[0]
+                          let article = results.filter(entry => entry._id == req.params.articleID)[0] // filters articles
                           article.title = req.body.title || article.title
                           article.content = req.body.content || article.content
                           article.tag = req.body.tag || article.tag
@@ -86,7 +114,11 @@ class baseController {
 
   };
 
-
+  /*
+   * getAllArticles(req,res) => Object
+   *
+   * Retrieves all articles of a specific kind
+  */
   getAllArticles(req,res) {
      Article.find(this.discriminator)
             .then(result => {
@@ -98,4 +130,4 @@ class baseController {
   };
 };
 
-export default baseController  ;
+export default baseController ;
