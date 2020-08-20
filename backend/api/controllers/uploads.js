@@ -4,6 +4,11 @@ import mongoose from "mongoose";
 let Interview = mongoose.model('Interview');
 let Podcast = mongoose.model('Podcast');
 
+/*
+ * returnPath(name) => String
+ *
+ * Returns path to save file to
+*/
 const returnPath = function(name){
 	let tag = name.split("-")[0];
 	let path = `uploads/images/${tag}-articles/`;
@@ -24,6 +29,9 @@ const returnPath = function(name){
 	return path;
 }
 
+/*
+ * Multer configuration
+*/
 const storage = multer.diskStorage({
   destination:(req,file,callback) => {
   	let dest = returnPath(file.originalname);
@@ -37,6 +45,11 @@ const storage = multer.diskStorage({
 
 let upload = multer({storage:storage});
 
+/*
+ * fileUpload(req,res) => Object
+ *
+ * Handles file uploads via multer
+*/
 const fileUpload = function(req,res){
 	const imageFile = req.file;
 

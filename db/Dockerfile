@@ -23,6 +23,4 @@ RUN mkdir -p /data/db
 EXPOSE 27017
 
 # Default port to execute the entrypoint (MongoDB)
-CMD ["mongod", "--bind_ip", "0.0.0.0"]
-
-
+CMD ["mongod","--bind_ip","0.0.0.0"]
