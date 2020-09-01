@@ -1,15 +1,22 @@
 version: '3.0'
 services:
-
   mongo-database:
-    build: db 
-    ports:
+    build: db
+    ports: 
     - "27017:27017"
 
   express:
     build: backend
-    ports:
+    ports: 
     - "3000:3000"
-    links:
+    links: 
     - mongo-database
+
+  angular:
+    build: frontend
+    ports: 
+    - "4200:4200"
+
+
+
 
