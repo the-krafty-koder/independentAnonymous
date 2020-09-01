@@ -18,7 +18,7 @@
 			<div class="ui segment" style="margin-top: 5em;">
 				<p class="lead">Not a member? Please <a routerLink="/register">register</a> </p>
 				<form class="ui form" (submit)="onLoginSubmit()">
-					<div role="alert" *ngIf="formErrors" class="alert">{{ formError }}</div>
+					<div role="alert" *ngIf="formError" class="alert">{{ formError }}</div>
 					<div class="field form-group">
 						<label>Email</label>
 						<input type="email" name="username" class="form-control" [(ngModel)]="credentials.email">
